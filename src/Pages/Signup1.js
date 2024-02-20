@@ -1,19 +1,3 @@
-/*import React from 'react'
-import "./Style.css"
-const Signup = () => {
-  return (
-    <div className='outlog'>
-        <form>
-            <label>First Name</label>
-            <input type='text' className='sip'/>
-            <label>Last Name</label>
-            <input type='text' className='sip'/>
-        </form>
-    </div>
-  )
-}
-
-export default Signup;*/
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -28,14 +12,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="#">
+      <Link color="inherit" href="https://mui.com/">
         Your Website
       </Link>{' '}
       {new Date().getFullYear()}
@@ -50,8 +34,8 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-
-
+  const loc=useLocation();
+    const dat=loc.state;
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -59,12 +43,12 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('Password'),
     });
-    const m=data.get('email')
-    const p=data.get('Password')
+    const m=dat.email;
+    const p=dat.password;
     const user={email:m,password:p}
-    if(data.get('Password'))
 
-    nav('/signup1',{state:user});
+
+    nav('/login',{state:user});
   };
   
   return (
@@ -91,34 +75,12 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="firstname"
+                  label="First Name"
+                  name="firstname"
+                  autoFocus
                   variant='filled'
                   />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="Password"
-                  label="Password"
-                  name="Password"
-                  variant='filled'
-                  />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="Cpassword"
-                  label="Confirm Password"
-                  type="password"
-                  id="Cpassword"
-                  autoComplete="new-password"
-                  variant='filled'
-                />
               </Grid>
 
             </Grid>
@@ -128,8 +90,14 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Next
+              Submit
             </Button>
+            <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  label="I want to receive inspiration, marketing promotions and updates via email."
+                />
+              </Grid>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="#" variant="body2">

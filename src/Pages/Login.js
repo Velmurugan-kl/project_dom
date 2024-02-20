@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -17,6 +16,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'*/
 const Login = (props) => {
     const nav=useNavigate();
     const loc=useLocation();
+    const dat=loc.state;
+    const m=dat.email;
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -24,10 +25,8 @@ const Login = (props) => {
             email: data.get('email'),
             password: data.get('password'),
         });
-    const dat="hhdfj";
-    nav('/home',{state:dat})
+    nav('/')
 };
-  
   return (
     <div className='outlog'>
         <Grid container component="main" sx={{width:'70vw', height: '80vh', mx:50 , my:8}}>
@@ -57,6 +56,8 @@ const Login = (props) => {
                         name="email"
                         autoComplete="email"
                         autoFocus
+                        value={dat.email}
+                        defaultValue={""}
                     />
                     <TextField
                         margin="normal"
@@ -67,6 +68,8 @@ const Login = (props) => {
                         type="password"
                         id="password"
                         autoComplete="current-password"
+                        value={dat.password}
+                        defaultValue={""}
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
