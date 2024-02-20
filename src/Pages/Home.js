@@ -5,7 +5,8 @@ const Home = (props) => {
     const a=useLocation();
     const dat1=a.state;
   return (
-    <div>Home {dat1.props}</div>
+    <div>Home {dat1.props}
+    <h1>udghfwerjk</h1></div>
   )
 }
 
