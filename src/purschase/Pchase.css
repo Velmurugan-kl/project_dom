@@ -1,0 +1,118 @@
+.c{
+    float: right;
+    margin-top: -1%;
+    
+}
+.s{
+    background-color: rgba(230, 232, 239, 0.705);
+    padding: 1%;
+    height: 19px;
+    border: 0cap;
+    margin: auto;
+    margin-top: -1px;
+    width: 1290px;
+}
+h2{
+    margin-top: 0%;
+    color:rgb(255, 240, 240);
+    background-color: rgba(210, 140, 28, 0.539);
+    font-family: cooper;
+    height: 35px;
+    font-size: xx-large;
+}
+body{
+    background-image: url("../purschase/trolly.jpg");
+    height: auto;
+    width: auto;
+    background-size: 100% 100%;
+    
+
+}
+h1{
+    font-family: Impact, fantasy;
+    font-size: 350%;
+    margin-top: 2%;
+    margin-left: 4%;
+    color:rgb(255, 240, 240);
+}
+h3{font-family: cooper;
+    font-size: 400%;
+    margin-top: -5%;
+    margin-left: 12%;
+    color: rgba(66, 58, 36, 0.231);
+}
+h5{
+  background-color: rgba(234, 228, 234, 0.566);  
+  margin-right: 550px;
+  color: rgb(18, 26, 23);
+  margin-top: -4%;
+  font-size: 200%;
+  margin-left: 1%;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 40px;
+  
+}
+a{
+    text-decoration: none;
+    color:rgb(255, 240, 240);
+    font-family: 'serif';
+    margin-left: -13%;
+    margin-bottom: -10%;
+    color: rgb(4, 40, 24);
+    
+
+    
+} 
+.c{
+    float: right;
+    margin-top: -3%;
+    margin-right: 9%;
+    backface-visibility: hidden;
+}
+img{
+    margin-bottom: 2.5%;
+    margin-left: 2%;
+}
+p{
+    margin-left: 12%;
+    font-size: 130%;
+    margin-top: 0%;
+    font-size: 165%;
+    
+}
+.bio{
+    margin-top: -16%;
+}
+h6{
+    margin-top: 4%;
+    margin-bottom: -4%;
+    
+}
+.add{
+    background-color: rgb(116, 239, 116);
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-left: 40%;
+    
+}
+.dec{
+    background-color: rgb(244, 89, 78);
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10%;
+    margin-left: 1%;
+    margin-top: -10%;
+    
+}
+h4{
+    font-size: 250%;
+    font-family: impact;
+    color: rgba(38, 35, 35, 0.833);
+    margin-left: 20%;
+    margin-bottom: 4%;
+}
