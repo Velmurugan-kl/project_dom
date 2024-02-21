@@ -2,7 +2,7 @@
 import "./Pchase.css"
 import img3 from "../purschase/book.jpg"
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+
 
 import React, { Component } from 'react'
 

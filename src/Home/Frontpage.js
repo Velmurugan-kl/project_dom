@@ -28,7 +28,7 @@ Our app is designed to be your virtual companion on your musical journey, offeri
         <button class="button button1" >Hindustani</button>
         <button class="button button2" >Carnatic</button>
         <button class="button button3">Western Classical</button>
-          <iframe width="600" height="315" src="https://www.youtube.com/embed/n2z02J4fJwg?si=NaSjNyziL7ZCrDdT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="700" height="315" src="https://www.youtube.com/embed/n2z02J4fJwg?si=NaSjNyziL7ZCrDdT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/MNOM7eM8ehk?si=6r0_xg16RvjbmHR6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </center>
         </div>

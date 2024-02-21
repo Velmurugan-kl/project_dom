@@ -62,6 +62,9 @@ export default function ResponsiveGrid() {
   const handlepian= ()=>{
     nav('/piano')
   }
+  const handlecar= ()=>{
+    nav('/cfront')
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -90,18 +93,18 @@ export default function ResponsiveGrid() {
             <CardMedia
             sx={{ height: 140 }}
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHp2hL10KGXOXyDTcjX7TnUnERO56xBfGsSA&usqp=CAU"
-            title="piano"/>
+            title="carnatic"/>
             <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Piano
+              Carnatic
             </Typography>
             <Typography variant="body2" color="text.secondary">
 
             </Typography>
             </CardContent>
             <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
+            <Button size="small" >Share</Button>
+            <Button size="small" onClick={handlecar}>Learn More</Button>
             </CardActions>
             </Card>
           </Grid>

@@ -1,14 +1,11 @@
 
 import {Link,Outlet} from 'react-router-dom'
-import './Navilayout.css'
+import "./Navilayout.css"
 
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
 
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -65,8 +62,8 @@ const Navilayout = () => {
 
         <ul>
             <li><a href="/">Home</a></li>
-            
-            <li><Autocomplete
+            <li><a href="/pchase">Shop</a></li>
+            {/* <li><Autocomplete
                     disablePortal
                     id="combo-box-demo"
                     options={top100Films}
@@ -81,7 +78,7 @@ const Navilayout = () => {
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 />
-            </Search></li>
+            </Search></li> */}
             <li className='log'><a class="active" href="/signup">Signup</a></li>
         </ul>
 
