@@ -17,16 +17,35 @@ const Login = (props) => {
     const nav=useNavigate();
     const loc=useLocation();
     const dat=loc.state;
-    const m=dat.email;
+    const [email,setEmail] =React.useState("");
+    const [password,setPassword]= React.useState("");
+    const [loged,setLoged] = React.useState(true)
+    // const m = dat ? dat.email : "";
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
-    nav('/')
-};
+        // console.log({
+            //     email: data.get('email'),
+            //     password: data.get('password'),
+            // });
+        const log={isLoged:loged,ifl:"bbn"}
+        console.log(log.isLoged+">>>>>>>>>>> login")
+        nav('/',{state:log});
+    };
+    React.useEffect(() => {
+        if(dat&&dat.email){
+            setEmail(dat.email)
+        }
+        if(dat&&dat.password){
+            setPassword(dat.password)
+        }
+    }, [dat]);
+    const handlemail = (event) =>{
+        setEmail (event.target.value )
+    }
+    const handlepass = (event) => {
+        setPassword(event.target.value)
+    }
   return (
     <div className='outlog'>
         <Grid container component="main" sx={{width:'70vw', height: '80vh', mx:50 , my:8}}>
@@ -56,8 +75,8 @@ const Login = (props) => {
                         name="email"
                         autoComplete="email"
                         autoFocus
-                        value={dat.email}
-                        defaultValue={""}
+                        value={email}
+                        onChange={handlemail}
                     />
                     <TextField
                         margin="normal"
@@ -68,8 +87,8 @@ const Login = (props) => {
                         type="password"
                         id="password"
                         autoComplete="current-password"
-                        value={dat.password}
-                        defaultValue={""}
+                        value={password}
+                        onChange={handlepass}
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}

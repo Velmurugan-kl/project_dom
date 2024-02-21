@@ -1,7 +1,7 @@
 
 import {Link,Outlet} from 'react-router-dom'
 import "./Navilayout.css"
-
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
@@ -47,7 +47,17 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-const Navilayout = () => {
+const Navilayout = (props) => {
+  const nav = useNavigate();
+  const loc = useLocation();
+  const dat = loc.state;
+  const [loged,setLoged]=React.useState(false);
+  React.useEffect(() => {
+      if(dat && dat.isloged){
+        setLoged(dat.isLoged)
+      }
+  }, [dat]);
+  console.log(dat.isLoged+">>>>>>>>>>>>>>> navi")
     const top100Films = [
         { label: 'The Shawshank Redemption', year: 1994 },
         { label: 'The Godfather', year: 1972 },
@@ -79,7 +89,8 @@ const Navilayout = () => {
                 inputProps={{ 'aria-label': 'search' }}
                 />
             </Search></li> */}
-            <li className='log'><a class="active" href="/signup">Signup</a></li>
+            {!loged &&(<li className='log'><a class="active" href="/signup">Signup</a></li>)}
+            
         </ul>
 
         <Outlet/>
