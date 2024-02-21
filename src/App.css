@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.sig{
+  height: 99vh;
+  width: 99vw;
+   position: relative; 
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5nyAbyARL_1TOLN0BrUxBoqDWMT5UPUjq2g&usqp=CAU');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sig::before{
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.477);
+}

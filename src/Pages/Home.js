@@ -79,6 +79,90 @@ export default function ResponsiveGrid() {
             </CardActions>
             </Card>
           </Grid>
+          <Grid item xs={2} sm={3} md={4} >
+            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+            <CardMedia
+            sx={{ height: 140 }}
+            image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHp2hL10KGXOXyDTcjX7TnUnERO56xBfGsSA&usqp=CAU"
+            title="piano"/>
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Piano
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+            </CardContent>
+            <CardActions>
+            <Button size="small">Share</Button>
+            <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={3} md={4} >
+            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+            <CardMedia
+            sx={{ height: 140 }}
+            image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
+            title="piano"/>
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Piano
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+            </CardContent>
+            <CardActions>
+            <Button size="small">Share</Button>
+            <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={3} md={4} >
+            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+            <CardMedia
+            sx={{ height: 140 }}
+            image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
+            title="piano"/>
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Piano
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+            </CardContent>
+            <CardActions>
+            <Button size="small">Share</Button>
+            <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={3} md={4} >
+            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+            <CardMedia
+            sx={{ height: 140 }}
+            image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
+            title="piano"/>
+            <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Piano
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+            </CardContent>
+            <CardActions>
+            <Button size="small">Share</Button>
+            <Button size="small">Learn More</Button>
+            </CardActions>
+            </Card>
+          </Grid>
       </Grid>
     </Box>
   );

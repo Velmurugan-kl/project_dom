@@ -29,7 +29,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-
+import { render } from '@testing-library/react';
+import Alert from '@mui/material/Alert';
 
 function Copyright(props) {
   return (
@@ -50,7 +51,13 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
+  const [open,SetOpen]=React.useState(true);
 
+  const handleClose = () =>{
+    SetOpen(false);
+  };
+
+  setTimeout(handleClose,3000);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -62,12 +69,18 @@ export default function SignUp() {
     const m=data.get('email')
     const p=data.get('Password')
     const user={email:m,password:p}
-    if(data.get('Password'))
-
-    nav('/signup1',{state:user});
+    if(data.get('Password')==="" || data.get('Cpassword')===""){
+      alert("Enter the password")
+    }
+    else if(data.get('Password')!==data.get('Cpassword') ){
+      alert("Check the password")
+    }
+    else{
+      nav('/signup1',{state:user});
+    }
   };
-  
   return (
+    <div className='sig' >
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -77,6 +90,7 @@ export default function SignUp() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -96,6 +110,8 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   variant='filled'
+                  InputProps={{style:{backgroundColor:'rgba(247,221,173,0.7'}}} //bgcolor of txt field
+                  sx={{'& .MuiInputLabel-root':{color:'red'}}}
                   />
               </Grid>
               <Grid item xs={12}>
@@ -142,5 +158,6 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </div>
   );
 }
