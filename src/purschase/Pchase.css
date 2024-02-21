@@ -1,6 +1,6 @@
 
 
-h2{
+.h2{
     margin-top: 0%;
     color:rgb(255, 240, 240);
     background-color: rgba(210, 140, 28, 0.539);
@@ -8,7 +8,7 @@ h2{
     height: 45px;
     font-size: xx-large;
 }
-body{
+.purch{
     background-image: url("../purschase/trolly.jpg");
     height: auto;
     width: auto;
@@ -16,20 +16,20 @@ body{
     
 
 }
-h1{
+.h1{
     font-family: Impact, fantasy;
     font-size: 350%;
     margin-top: 2%;
     margin-left: 4%;
     color:rgb(255, 240, 240);
 }
-h3{font-family:fantasy;
+.h3{font-family:fantasy;
     font-size: 500%;
     margin-top: -1%;
     margin-left: 12%;
     color: rgba(66, 58, 36, 0.231);
 }
-h5{
+.h5{
   background-color: rgba(234, 228, 234, 0.566);  
   margin-right: 690px;
   color: rgb(18, 26, 23);
@@ -48,12 +48,12 @@ a{
     margin-bottom: -10%;
     color: rgb(4, 40, 24);
 }
-img{
+.si{
     margin-bottom: 6%;
     margin-left: 2%;
     margin-top: 2%;
 }
-p{
+.par{
     margin-left: 10%;
     font-size: 130%;
     margin-top: 10%;
@@ -89,7 +89,7 @@ h6{
     margin-top: 4%;
     
 }
-h4{
+.h4{
     font-size: 250%;
     font-family: impact;
     color: rgba(38, 35, 35, 0.833);

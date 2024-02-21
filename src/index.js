@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './Pages/Login';
+import Frontpage from './Home/Frontpage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App/>
+    {/* <Frontpage/> */}
   </React.StrictMode>
 );
 

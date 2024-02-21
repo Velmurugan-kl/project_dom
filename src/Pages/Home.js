@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 //   return (
 //     <div>
       
-//     <Card sx={{ maxWidth: 345 }}>
+//     <Card style={cardStyle}sx={{ maxWidth: 345 }}>
 //       <CardMedia
 //         sx={{ height: 140 }}
 //         image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
@@ -65,11 +65,17 @@ export default function ResponsiveGrid() {
   const handlecar= ()=>{
     nav('/cfront')
   }
+  var cardStyle = {
+    display: 'block',
+    width: '30vw',
+    transitionDuration: '0.3s',
+
+}
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          <Grid item xs={2} sm={3} md={4} >
-            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+          <Grid item xs={2} sm={3} md={3} >
+            <Card style={cardStyle} sx={{ maxWidth: 300, mx:2 , my:3}} >
             <CardMedia
             sx={{ height: 140 }}
             image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
@@ -79,7 +85,7 @@ export default function ResponsiveGrid() {
               Piano
             </Typography>
             <Typography variant="body2" color="text.secondary">
-  
+            Unleash your inner musician with our immersive piano tutorials! Whether you're a complete beginner or looking to sharpen your skills, find step-by-step guides tailored to your level. Discover the joy of playing from beginner melodies to advanced pieces, all at your own pace. Start your musical journey today!
             </Typography>
             </CardContent>
             <CardActions>
@@ -88,8 +94,8 @@ export default function ResponsiveGrid() {
             </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} >
-            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+          <Grid item xs={2} sm={3} md={3} >
+            <Card style={cardStyle}sx={{ maxWidth: 300, mx:2 , my:3}} >
             <CardMedia
             sx={{ height: 140 }}
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHp2hL10KGXOXyDTcjX7TnUnERO56xBfGsSA&usqp=CAU"
@@ -99,7 +105,7 @@ export default function ResponsiveGrid() {
               Carnatic
             </Typography>
             <Typography variant="body2" color="text.secondary">
-
+              This captivating South Indian tradition goes beyond entertainment, offering a path to inner peace and cultural exploration. Its rich history, spiritual depths, and mesmerizing melodies transport listeners to a world of timeless beauty and artistic discovery.
             </Typography>
             </CardContent>
             <CardActions>
@@ -108,8 +114,8 @@ export default function ResponsiveGrid() {
             </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} >
-            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+          <Grid item xs={2} sm={3} md={3} >
+            <Card style={cardStyle}sx={{ maxWidth: 300, mx:2 , my:3}} >
             <CardMedia
             sx={{ height: 140 }}
             image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
@@ -128,8 +134,8 @@ export default function ResponsiveGrid() {
             </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} >
-            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+          <Grid item xs={2} sm={3} md={3} >
+            <Card style={cardStyle}sx={{ maxWidth: 300, mx:2 , my:3}} >
             <CardMedia
             sx={{ height: 140 }}
             image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"
@@ -148,8 +154,8 @@ export default function ResponsiveGrid() {
             </CardActions>
             </Card>
           </Grid>
-          <Grid item xs={2} sm={3} md={4} >
-            <Card sx={{ maxWidth: 350, mx:2 , my:3}} >
+          <Grid item xs={2} sm={3} md={3} >
+            <Card style={cardStyle}sx={{ maxWidth: 300, mx:2 , my:3}} >
             <CardMedia
             sx={{ height: 140 }}
             image="https://www.daysoftheyear.com/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Cheight=650%2Cq=40%2Csharpen=1%2Cwidth=956/wp-content/uploads/world-piano-day.jpg"

@@ -5,9 +5,10 @@
   padding: 0;
   box-sizing: border-box; 
 }
-body{
+.solo{
   background-image: url("../Piano/pia.jpg");
-  background-size: 1280px;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 .no{
  
@@ -38,7 +39,14 @@ body{
   margin-right: 2%;
   
   
- 
+  
+}
+.wrapper:hover{
+  
+  box-shadow:0 0 90px rgba(200, 87, 231, 0.937);
+  cursor: pointer;
+  transition: transform 0.8s ease,box-shadow 0.3 ease;
+
 }
 .wrapper header {
   display: flex;

@@ -10,6 +10,7 @@ import Piano from './Piano/Piano';
 import Pchase from './purschase/Pchase';
 import Carnatic from './Home/Carnatic';
 import Frontpage from './Home/Frontpage';
+import Profile from './profile/Profile';
 
 function App() {
   return (
@@ -21,9 +22,8 @@ function App() {
         <Route path='/pchase' element={<Pchase/>}/>
         <Route path='/cfront' element={<Frontpage/>}/>
         <Route path='/carnatic' element={<Carnatic/>}/>
-
         </Route>
-
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signup1" element={<SignUp1 />} />

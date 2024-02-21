@@ -74,7 +74,7 @@ const Piano=()=> {
   
     
   return (
-  <>
+  <div className='solo'>
     
     <div class="wrapper">
       <header>
@@ -104,7 +104,7 @@ const Piano=()=> {
    <center><iframe width="700" height="260" src="https://www.youtube.com/embed/bzNKQ2FkEJI?si=wybSqXWcvnPGSFC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <iframe width="700" height="260" src="https://www.youtube.com/embed/S8TvXhLtLa0?si=3w4J2YB4utf_b2a7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
     
-    </>
+    </div>
 
 
       
