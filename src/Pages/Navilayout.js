@@ -65,6 +65,7 @@ const Navilayout = () => {
 
         <ul>
             <li><a href="/">Home</a></li>
+            
             <li><Autocomplete
                     disablePortal
                     id="combo-box-demo"

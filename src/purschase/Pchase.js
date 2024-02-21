@@ -13,10 +13,7 @@ export class Pchase extends Component {
         count:0
     }
    } 
-   navi=useNavigate();
-    hc1=()=>{
-       navi("/Login") 
- }
+
    //function to increment the counter
    incrementCounter=()=>{
     this.setState({count:this.state.count+499})
@@ -54,7 +51,7 @@ export class Pchase extends Component {
     <button class='add'onClick={this.incrementCounter}>Add</button>
     <button class='dec'onClick={this.decrementCounter}>less</button>
   <h4>Total Price: ₹ {this.state.count}.00/</h4>
-  <Button onClick={hc1}
+  <Button 
                 fullWidth
                 variant="contained" color="warning"
                

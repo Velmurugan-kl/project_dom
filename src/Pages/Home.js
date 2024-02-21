@@ -44,6 +44,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Margin } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -54,7 +56,12 @@ const Item = styled(Paper)(({ theme }) => ({
   
 }));
 
+
 export default function ResponsiveGrid() {
+  const nav = useNavigate();
+  const handlepian= ()=>{
+    nav('/piano')
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -75,7 +82,7 @@ export default function ResponsiveGrid() {
             </CardContent>
             <CardActions>
             <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
+            <Button size="small" onClick={handlepian}>Learn More</Button>
             </CardActions>
             </Card>
           </Grid>

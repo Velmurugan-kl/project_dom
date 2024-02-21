@@ -6,6 +6,8 @@ import Home from './Pages/Home';
 import SignUp from './Pages/Signup';
 import SignUp1 from './Pages/Signup1';
 import Navilayout from './Pages/Navilayout';
+import Piano from './Piano/Piano';
+import Pchase from './purschase/Pchase';
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Navilayout />} >
         <Route index element={<Home />}/>
+        <Route path='/piano' element={<Piano/>}/>
+        <Route path='/pchase' element={<Pchase/>}/>
         </Route>
+
         <Route path='/login' element={<Login/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signup1" element={<SignUp1 />} />
