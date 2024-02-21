@@ -1,12 +1,12 @@
 import React from 'react'
-import '../Frontpage/Frontpage.css'
+import './Frontpage.css'
 
 import { useNavigate } from 'react-router-dom'
 const Frontpage = () => {
 
   const navigate=useNavigate()
     const handleClick = () =>{
-navigate("/Carnatic")
+navigate("/carnatic")
 
     }
   return (
