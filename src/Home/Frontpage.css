@@ -1,0 +1,51 @@
+.button{
+    
+    padding:10px 32px;
+    margin: 9px 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 7%;
+    
+}
+.button1{
+    color:black;
+    background-color: transparent;
+    border: 3px solid blueviolet;
+}
+.button1:hover{
+    background-color:darkviolet;
+    color:black;
+}
+.button2{
+    color:black;
+    background-color: transparent;
+    border: 3px solid blueviolet;
+}
+.button2:hover{
+    background-color:darkviolet;
+    color:black;
+}
+.button3{
+    color:Black;
+    background-color: transparent;
+    border: 3px solid blueviolet;
+}
+.button3:hover{
+    background-color:darkviolet;
+    color:black;
+}
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:darkviolet;
+}
+body{
+    background-color:black;+
+}
+p{
+    color: black;
+}
+h3{
+    color:antiquewhite;
+}
