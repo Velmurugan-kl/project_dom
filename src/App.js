@@ -8,6 +8,8 @@ import SignUp1 from './Pages/Signup1';
 import Navilayout from './Pages/Navilayout';
 import Piano from './Piano/Piano';
 import Pchase from './purschase/Pchase';
+import Carnatic from './Home/Carnatic';
+import Frontpage from './Home/Frontpage';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         <Route index element={<Home />}/>
         <Route path='/piano' element={<Piano/>}/>
         <Route path='/pchase' element={<Pchase/>}/>
+        <Route path='/cfront' element={<Frontpage/>}/>
+        <Route path='/carnatic' element={<Carnatic/>}/>
+
         </Route>
 
         <Route path='/login' element={<Login/>}/>
