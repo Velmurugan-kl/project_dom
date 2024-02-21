@@ -25,13 +25,7 @@ export class Pchase extends Component {
   render() {
     return (
       <div>
-        <fieldset class='s'>
-    <p class='d'>
-      
-    <a href="https://www.skct.edu.in/#/"target='_blank'>☰ Home</a><br></br>
-     
-    <input class='c'placeholder='⌕ SEARCH'></input></p><br></br>
-    </fieldset>
+       
  <center><h2>Popz Tune</h2></center>
     <div>
       
@@ -49,15 +43,15 @@ export class Pchase extends Component {
           </p></div>
   
     <button class='add'onClick={this.incrementCounter}>Add</button>
-    <button class='dec'onClick={this.decrementCounter}>less</button>
+    <button class='dec'onClick={this.decrementCounter}>Remove</button>
   <h4>Total Price: ₹ {this.state.count}.00/</h4>
-  <Button 
+  <Button className='buy'
                 fullWidth
                 variant="contained" color="warning"
                
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 5 }}
               >
-                Sign In
+                BUY NOW
               </Button>
       </div>
     )
