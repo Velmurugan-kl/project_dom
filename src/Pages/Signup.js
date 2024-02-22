@@ -19,8 +19,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -29,8 +27,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-import { render } from '@testing-library/react';
-import Alert from '@mui/material/Alert';
+import Mycontext from './Mycontext';
 
 function Copyright(props) {
   return (
@@ -52,6 +49,7 @@ const defaultTheme = createTheme();
 export default function SignUp() {
   const nav=useNavigate();
   const [open,SetOpen]=React.useState(true);
+  const {email,setEmail,password,setPassword}=React.useContext(Mycontext)
 
   const handleClose = () =>{
     SetOpen(false);
@@ -66,9 +64,8 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('Password'),
     });
-    const m=data.get('email')
-    const p=data.get('Password')
-    const user={email:m,password:p}
+    setEmail(data.get('email'))
+    setPassword(data.get('Password'))
     if(data.get('Password')==="" || data.get('Cpassword')===""){
       alert("Enter the password")
     }
@@ -76,7 +73,7 @@ export default function SignUp() {
       alert("Check the password")
     }
     else{
-      nav('/signup1',{state:user});
+      nav('/signup1');
     }
   };
   return (
@@ -86,14 +83,22 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Box
+          sx={{marginTop:8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            borderRadius:10,
+            width:450,
+            padding:5,
+            backdropFilter:'blur(8px) saturate(120%)',}}>
+          <Avatar sx={{ m: 1, bgcolor: '#e2ded7' }} src='./Images/avat.png'>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -110,8 +115,9 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   variant='filled'
-                  InputProps={{style:{backgroundColor:'rgba(247,221,173,0.7'}}} //bgcolor of txt field
-                  sx={{'& .MuiInputLabel-root':{color:'red'}}}
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
               </Grid>
               <Grid item xs={12}>
@@ -122,6 +128,7 @@ export default function SignUp() {
                   label="Password"
                   name="Password"
                   variant='filled'
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
               </Grid>
               <Grid item xs={12}>
@@ -134,6 +141,7 @@ export default function SignUp() {
                   id="Cpassword"
                   autoComplete="new-password"
                   variant='filled'
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                 />
               </Grid>
 
@@ -153,6 +161,7 @@ export default function SignUp() {
                 </Link>
               </Grid>
             </Grid>
+          </Box>
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />

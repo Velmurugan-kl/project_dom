@@ -12,9 +12,15 @@ import Carnatic from './Home/Carnatic';
 import Frontpage from './Home/Frontpage';
 import Profile from './profile/Profile';
 import ResponsiveGrid from './Pages/Home';
+import Mycontext from './Pages/Mycontext';
+import { useState } from 'react';
 
 function App() {
+  const [email,setEmail]=useState("aa");
+  const [password,setPassword]=useState("");
+  const [loged,setLoged]=useState(false);
   return (
+    <Mycontext.Provider value={{email,setEmail,password,setPassword,loged,setLoged}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navilayout />} >
@@ -30,6 +36,7 @@ function App() {
         <Route path="/signup1" element={<SignUp1 />} />
       </Routes>
     </BrowserRouter>
+    </Mycontext.Provider>
   );
 }
 

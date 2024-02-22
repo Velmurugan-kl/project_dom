@@ -60,14 +60,6 @@ export default function ResponsiveGrid(props) {
   const nav = useNavigate();
   const loc = useLocation();
   const dat = loc.state;
-  const [loged,setLoged]=React.useState(false);
-  const loge=dat.isloged;
-  console.log(loge+">>>>>>>>>>>>>>> home")
-  React.useEffect(() => {
-      if(dat && dat.isloged){
-        setLoged(true)
-      }
-  }, [dat]);
 
   var cardStyle = {
     display: 'block',
@@ -78,7 +70,7 @@ export default function ResponsiveGrid(props) {
   return (
     <Box 
     sx={{ flexGrow: 1 ,
-    backgroundImage:'url("./Images/home1.jpeg")',
+    backgroundImage:'url("./Images/home1.jpg")',
     backgroundRepeat:'no-repeat',
     backgroundSize:'cover'}} >
       

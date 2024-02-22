@@ -43,12 +43,14 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('Password'),
     });
-    const m=dat.email;
-    const p=dat.password;
-    const user={email:m,password:p}
 
 
-    nav('/login',{state:user});
+    // const m=dat.email;
+    // const p=dat.password;
+    // const user={email:m,password:p}
+
+
+    nav('/login');
   };
   
   return (

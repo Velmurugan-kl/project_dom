@@ -1,66 +1,50 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
+import Mycontext from './Mycontext';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
-/*import Home from './Home';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'*/
-
 const Login = (props) => {
     const nav=useNavigate();
-    const loc=useLocation();
-    const dat=loc.state;
-    const [email,setEmail] =React.useState("");
-    const [password,setPassword]= React.useState("");
-    const [loged,setLoged] = React.useState(true)
-    // const m = dat ? dat.email : "";
+    const {email,setEmail,password,setPassword,loged,setLoged}=React.useContext(Mycontext)
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // console.log({
-            //     email: data.get('email'),
-            //     password: data.get('password'),
-            // });
-        const log={isLoged:loged,ifl:"bbn"}
-        console.log(log.isLoged+">>>>>>>>>>> login")
-        nav('/',{state:log});
+        setLoged(true);
+        nav('/');
     };
-    React.useEffect(() => {
-        if(dat&&dat.email){
-            setEmail(dat.email)
-        }
-        if(dat&&dat.password){
-            setPassword(dat.password)
-        }
-    }, [dat]);
     const handlemail = (event) =>{
         setEmail (event.target.value )
     }
     const handlepass = (event) => {
         setPassword(event.target.value)
     }
-  return (
-    <div className='outlog'>
-        <Grid container component="main" sx={{width:'70vw', height: '80vh', mx:50 , my:8}}>
-            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-                <Box
-                sx={{
-                my: 8,
-                mx: 4,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                }}
-                >
 
-                    <Avatar sx={{width:50,height:50}} src='./Images/skct_logo1_pn.png'>
+    const defaultTheme = createTheme();
+  return (
+    <div className='sig'>
+        <ThemeProvider theme={defaultTheme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            
+          }}
+        >
+          <Avatar sx={{width:50,height:50}} src='./Images/skct_logo1_pn.png'>
                     </Avatar>
                     <Typography component="h1" variant="h5">
                     Sign in
@@ -116,9 +100,9 @@ const Login = (props) => {
                     </Grid>
 
                 </Box>
-                </Box>
-            </Grid>
-        </Grid>
+        </Box>
+      </Container>
+    </ThemeProvider>
     </div>
   )
 }
