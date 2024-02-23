@@ -16,11 +16,12 @@ import Mycontext from './Pages/Mycontext';
 import { useState } from 'react';
 
 function App() {
-  const [email,setEmail]=useState("aa");
+  const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const [loged,setLoged]=useState(false);
+  const [next,setNext]=useState(false);
   return (
-    <Mycontext.Provider value={{email,setEmail,password,setPassword,loged,setLoged}}>
+    <Mycontext.Provider value={{email,setEmail,password,setPassword,loged,setLoged,next,setNext}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navilayout />} >

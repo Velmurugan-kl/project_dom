@@ -39,14 +39,11 @@
 .sig{
   height: 100vh;
   width: 100vw;
-   position: relative;
-  background-image: url('https://wallpapercave.com/wp/wp9291744.jpg');
+  background-image: url('/public/Images/Sign.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
-.myHoverButton:hover {
-  background-color: #ffffff;
-}
+
 /* .sig::before{
   content: "";
   position: absolute;

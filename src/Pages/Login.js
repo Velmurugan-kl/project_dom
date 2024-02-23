@@ -6,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -14,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-const Login = (props) => {
+const Login = () => {
     const nav=useNavigate();
     const {email,setEmail,password,setPassword,loged,setLoged}=React.useContext(Mycontext)
     const handleSubmit = (event) => {
@@ -120,12 +119,12 @@ const Login = (props) => {
               <Grid item xs={12}>
                 <Grid container >
                   <Grid item xs >
-                    <Link href="#" variant="body2" sx={{color:'#bbb6ae'}}>
+                    <Link href="#" variant="body2" sx={{color:'#e4e4e4'}}>
                      Forgot password?
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link href="/signup" variant="body2"sx={{color:'#bbb6ae'}}>
+                    <Link href="/signup1" variant="body2"sx={{color:'#e4e4e4'}}>
                        {"Don't have an account? Sign Up"}
                     </Link>
                   </Grid>

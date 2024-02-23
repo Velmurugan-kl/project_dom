@@ -1,19 +1,3 @@
-/*import React from 'react'
-import "./Style.css"
-const Signup = () => {
-  return (
-    <div className='outlog'>
-        <form>
-            <label>First Name</label>
-            <input type='text' className='sip'/>
-            <label>Last Name</label>
-            <input type='text' className='sip'/>
-        </form>
-    </div>
-  )
-}
-
-export default Signup;*/
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -48,22 +32,10 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-  const [open,SetOpen]=React.useState(true);
   const {email,setEmail,password,setPassword}=React.useContext(Mycontext)
-
-  const handleClose = () =>{
-    SetOpen(false);
-  };
-
-  setTimeout(handleClose,3000);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('Password'),
-    });
     setEmail(data.get('email'))
     setPassword(data.get('Password'))
 
@@ -74,7 +46,7 @@ export default function SignUp() {
       alert("Check the password")
     }
     else{
-      nav('/signup1');
+      nav('/login');
     }
   };
 
