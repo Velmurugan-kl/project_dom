@@ -66,6 +66,7 @@ export default function SignUp() {
     });
     setEmail(data.get('email'))
     setPassword(data.get('Password'))
+
     if(data.get('Password')==="" || data.get('Cpassword')===""){
       alert("Enter the password")
     }
@@ -76,6 +77,8 @@ export default function SignUp() {
       nav('/signup1');
     }
   };
+
+
   return (
     <div className='sig' >
     <ThemeProvider theme={defaultTheme}>
@@ -128,6 +131,8 @@ export default function SignUp() {
                   label="Password"
                   name="Password"
                   variant='filled'
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
               </Grid>
@@ -141,6 +146,8 @@ export default function SignUp() {
                   id="Cpassword"
                   autoComplete="new-password"
                   variant='filled'
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                 />
               </Grid>
@@ -150,13 +157,21 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3, mb: 2 ,
+                backgroundColor: '#bbb6ae',
+                color: '#4b4b4b',
+                '&:hover': {
+                  backgroundColor: '#8d8d8d', 
+                  color: '#fff', 
+                },
+              }}
             >
               Next
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login" variant="body2" sx={{color:'#bbb6ae'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

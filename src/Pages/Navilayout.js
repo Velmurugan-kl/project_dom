@@ -245,7 +245,7 @@ function Navilayout() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -302,7 +302,7 @@ function Navilayout() {
             variant="h5"
             noWrap
             component="a"
-            href="#app"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -330,7 +330,6 @@ function Navilayout() {
           </Box>
 
               {!loged && (<Box display={'flex'} >
-                  <Button variant="text" sx={{ my: 2, color: 'white', display: 'block' }} onClick={() => {nav('/signup')}}>SignUp</Button>
                   <Button variant="text" sx={{ my: 2, color: 'white', display: 'block' }} onClick={() => {nav('/login')}}>Login</Button>
               </Box>)}
 

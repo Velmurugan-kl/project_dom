@@ -44,7 +44,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.myHoverButton:hover {
+  background-color: #ffffff;
+}
 /* .sig::before{
   content: "";
   position: absolute;
