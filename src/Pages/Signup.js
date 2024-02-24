@@ -1,26 +1,8 @@
-/*import React from 'react'
-import "./Style.css"
-const Signup = () => {
-  return (
-    <div className='outlog'>
-        <form>
-            <label>First Name</label>
-            <input type='text' className='sip'/>
-            <label>Last Name</label>
-            <input type='text' className='sip'/>
-        </form>
-    </div>
-  )
-}
-
-export default Signup;*/
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -29,8 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-import { render } from '@testing-library/react';
-import Alert from '@mui/material/Alert';
+import Mycontext from './Mycontext';
 
 function Copyright(props) {
   return (
@@ -51,24 +32,13 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-  const [open,SetOpen]=React.useState(true);
-
-  const handleClose = () =>{
-    SetOpen(false);
-  };
-
-  setTimeout(handleClose,3000);
-
+  const {email,setEmail,password,setPassword,next,setNext}=React.useContext(Mycontext)
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('Password'),
-    });
-    const m=data.get('email')
-    const p=data.get('Password')
-    const user={email:m,password:p}
+    setEmail(data.get('email'))
+    setPassword(data.get('Password'))
+
     if(data.get('Password')==="" || data.get('Cpassword')===""){
       alert("Enter the password")
     }
@@ -76,9 +46,11 @@ export default function SignUp() {
       alert("Check the password")
     }
     else{
-      nav('/signup1',{state:user});
+      nav('/login');
     }
   };
+
+
   return (
     <div className='sig' >
     <ThemeProvider theme={defaultTheme}>
@@ -86,20 +58,28 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Box
+          sx={{marginTop:8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            borderRadius:10,
+            width:450,
+            padding:5,
+            backdropFilter:'blur(8px) saturate(120%)',}}>
+          <Avatar sx={{ m: 1, bgcolor: '#e2ded7' }} src='./Images/avat.png'>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          {next && <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -110,8 +90,9 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   variant='filled'
-                  InputProps={{style:{backgroundColor:'rgba(247,221,173,0.7'}}} //bgcolor of txt field
-                  sx={{'& .MuiInputLabel-root':{color:'red'}}}
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
               </Grid>
               <Grid item xs={12}>
@@ -122,6 +103,9 @@ export default function SignUp() {
                   label="Password"
                   name="Password"
                   variant='filled'
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
               </Grid>
               <Grid item xs={12}>
@@ -134,25 +118,57 @@ export default function SignUp() {
                   id="Cpassword"
                   autoComplete="new-password"
                   variant='filled'
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                 />
               </Grid>
 
+            <Grid item xs={6}>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={()=>{setNext(false);nav('/signup1')}}
+              sx={{
+                mt: 3, mb: 2 ,
+                backgroundColor: '#bbb6ae',
+                color: '#4b4b4b',
+                '&:hover': {
+                  backgroundColor: '#8d8d8d', 
+                  color: '#fff', 
+                },
+              }}
+            >
+              back
+            </Button>
             </Grid>
+            <Grid item xs={6}>
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3, mb: 2 ,
+                backgroundColor: '#bbb6ae',
+                color: '#4b4b4b',
+                '&:hover': {
+                  backgroundColor: '#8d8d8d', 
+                  color: '#fff', 
+                },
+              }}
             >
               Next
             </Button>
+            </Grid>
+            </Grid>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login" variant="body2" sx={{color:'#bbb6ae'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
+          </Box>}
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />
