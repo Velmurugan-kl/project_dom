@@ -1,26 +1,32 @@
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
-}
-.solo{
+.ca{
   background-image: url("../Piano/pia.jpg");
+  background-size: cover ;
   background-repeat: no-repeat;
-  background-size:cover;
+  padding: 20px;
+  
+ 
+}
+.var{
+  margin-top: 2%;
 }
 .no{
  
     font-family: 'Brush Script MT', cursive;
     margin-left: 65%;
     font-size: 180%;
-    margin-top: 1%;
-    background-color: #0e0e08cc;
+    margin-top: -6%;
+    background-color: rgb(138, 22, 22);
     border-top-left-radius: 40px;
-    border-bottom-right-radius: 80px;
+    border-bottom-right-radius: 100px;
     color: #f7f3f3;
-    
+    position: relative;
+    animation: myfirst 5s 2;
+  animation-direction: alternate;
+  
+}
+  @keyframes myfirst {
+    60%   {background: rgb(138, 22, 22); left: 0px; top: 0px;}
+    30%  {background: #225d38; left: 1000px; top: 0px;}
 
     
     
@@ -34,16 +40,20 @@
   justify-content: center;
   padding: 35px 40px;
   border-radius: 20px;
-  background: #102919;
+  background-image: url("../Piano/piaa.jpg");
   margin-left: 2%;
   margin-right: 2%;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  background-size: 300px 380px;
+  
   
   
   
 }
 .wrapper:hover{
   
-  box-shadow:0 0 90px rgba(200, 87, 231, 0.937);
+  box-shadow:0 0 20px rgba(220, 196, 111, 0.937);
   cursor: pointer;
   transition: transform 0.8s ease,box-shadow 0.3 ease;
 
@@ -55,9 +65,9 @@
   justify-content: space-between;
   
 }
-header h2 {
+.pp{
   font-size: 2.3rem;
-  color: white;
+  color: rgb(66, 55, 55);
   background-color: #faf4f400;
   border-radius: 0%;
   margin-left: 31%;
@@ -132,6 +142,7 @@ header input {
   border-radius: 8px;
   border: 1px solid #000;
   background: linear-gradient(#fff 96%, #eee 4%);
+  
 }
 .piano-keys .white.active {
   box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
