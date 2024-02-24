@@ -35,7 +35,7 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-  const {next,setNext}=React.useContext(Mycontext);
+  const {email,setEmail,password,setPassword,next,setNext}=React.useContext(Mycontext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -43,7 +43,20 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('Password'),
     });
-    nav('/');
+    setEmail(data.get('email'))
+    setPassword(data.get('Password'))
+    if(data.get('Password')==="" || data.get('Cpassword')===""){
+      alert("Enter the password")
+    }
+    else if(data.get('Password')!==data.get('Cpassword') ){
+      alert("Check the password")
+    }
+    else{
+      setTimeout(()=>{
+
+        nav('/login');
+      },3000)
+    }
   };
 
   const gender = [
@@ -180,13 +193,7 @@ export default function SignUp() {
                   />
                 </Grid>
             </Grid>
-            <Grid container justifyContent="flex-end" sx={{marginTop:2}}>
-              <Grid item >
-                <Link href="#" variant="body2" sx={{color:'#e2ded7'}}>
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
+            
           </Box>}
 
           {/* signup */}
@@ -273,14 +280,16 @@ export default function SignUp() {
             </Button>
             </Grid>
             </Grid>
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="/login" variant="body2" sx={{color:'#bbb6ae'}}>
+          </Box>}
+
+
+          <Grid container justifyContent="flex-end" sx={{marginTop:2}}>
+              <Grid item >
+                <Link href="/login" variant="body2" sx={{color:'#e2ded7'}}>
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
-          </Box>}
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />

@@ -75,20 +75,21 @@ const Login = () => {
                   />
               </Grid>
               <Grid item xs={12}>
-                <TextField
+              <TextField
                   required
                   fullWidth
-                  id="Password"
+                  name="password"
                   label="Password"
-                  name="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
                   variant='filled'
-                  autoComplete="current-password"
                   value={password}
                   onChange={handlepass}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-                  />
+                />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel

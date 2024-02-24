@@ -32,7 +32,7 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-  const {email,setEmail,password,setPassword}=React.useContext(Mycontext)
+  const {email,setEmail,password,setPassword,next,setNext}=React.useContext(Mycontext)
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -79,7 +79,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          {next && <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -124,7 +124,25 @@ export default function SignUp() {
                 />
               </Grid>
 
+            <Grid item xs={6}>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={()=>{setNext(false);nav('/signup1')}}
+              sx={{
+                mt: 3, mb: 2 ,
+                backgroundColor: '#bbb6ae',
+                color: '#4b4b4b',
+                '&:hover': {
+                  backgroundColor: '#8d8d8d', 
+                  color: '#fff', 
+                },
+              }}
+            >
+              back
+            </Button>
             </Grid>
+            <Grid item xs={6}>
             <Button
               type="submit"
               fullWidth
@@ -141,6 +159,8 @@ export default function SignUp() {
             >
               Next
             </Button>
+            </Grid>
+            </Grid>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/login" variant="body2" sx={{color:'#bbb6ae'}}>
@@ -148,7 +168,7 @@ export default function SignUp() {
                 </Link>
               </Grid>
             </Grid>
-          </Box>
+          </Box>}
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />
