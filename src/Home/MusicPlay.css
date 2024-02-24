@@ -1,0 +1,138 @@
+
+#primary-section-topbar{
+    margin-left: 84px;
+    margin-top: 30px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+#primary-section-searchbar{
+    width: 40%;
+    font-size: 16px;
+}
+#searchbar{
+    width: 100%;
+    padding: 10px 44px;
+    border-radius: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #adb5bd;
+    letter-spacing: 0.3;
+    border: 1px solid #adb5bd;
+    outline: none;
+}
+#searchbar:hover{
+    box-shadow: 2px 2px 4px #adb5bd;
+}
+
+#primary-section-options{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#primary-section-options>div{
+    margin-left: 14px;
+    font-size: 16px;
+    color: #adb5bd;
+}
+
+
+
+
+#billboard{
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 84px;
+    margin-bottom: 7px;
+    margin-top: 32px;
+
+}
+
+#topchart-cards{
+    display: flex;
+    align-content: center;
+}
+.cards{
+    margin: 10px 66px;
+    padding: 4px;
+    
+}
+.cards > img {
+    margin-left: 5%;
+    width: 150px;
+    height: 150px;
+    border-radius: 16px;
+   
+}
+.cards>img:hover{
+    position: relative;
+    top: -2px;
+    box-shadow: 5px 5px 4px rgb(78, 76, 76);
+}
+.cards > h3{
+    margin-bottom: 0;
+    margin-top: 18px;
+    font-size: 17px;
+   text-align: center;
+}
+#music-playlist-titles{
+    display: flex;
+    padding: 4px 16px;
+    margin-left:84px;
+}
+#most-popular{
+    width: 70%;
+}
+#most-popular>h2{
+    margin: 0;
+    margin-left: 4px;
+}
+#most-popular >p{
+    margin: 0;
+    margin-bottom: 4px;
+    color: grey;
+}
+
+#primary-second-section{
+    display: flex;
+}
+
+#most-popular-section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 82px;
+}
+.most-popular-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 2px 18px;
+    margin-bottom: 12px;
+}
+.most-popular-items:hover{
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+    box-shadow: 2px 1px 1px rgb(194, 188, 188);
+}
+.music-icon-section{
+    display: flex;
+    align-items: center;
+}
+.music-icon-section img, p , i{
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(70, 69, 69);
+}
+
+.music-icon-section > img{
+    width: 60px;
+    height: 60px;
+}
+
+

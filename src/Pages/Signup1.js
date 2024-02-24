@@ -58,12 +58,6 @@ export default function SignUp() {
       },3000)
     }
   };
-
-  const gender = [
-    {value:"Male"},
-    {value:"Female"},
-    {value:"Other"},
-  ];
   
   return (
     <div className='sig'>
