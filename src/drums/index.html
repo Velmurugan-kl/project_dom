@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>NJan instrument</title>
+</head>
+
+<body>
+  <center>
+    <h1 style="color: brown;">NJan Drum-set</h1>
+    <h4 style="color: green;">(using simple javascript)</h4>
+    <div class="">
+      <img src="images/crash_1.png" onclick={playj}/>
+      <img src="images/Tom_2.PNG" style="width: 210px;cursor: url('./images/Stick1.gif'), auto;"
+        onclick="instrumentClick('tom')" />
+      <img src="images/kick.png" style="width: 200px;cursor: url('./images/Stick1.gif'), auto;"
+        onclick="instrumentClick('kick')" />
+      <img src="images/snare.png" style="cursor: url('./images/Stick1.gif'), auto;"
+        onclick="instrumentClick('snare')" />
+      <img src="images/crash.png" style="cursor: url('./images/Stick1.gif'), auto;"
+        onclick="instrumentClick('crash')" />
+    </div>
+
+  </center>
+
+  <script type="text/javascript">
+    function instrumentClick(instr) {
+      switch (instr) {
+        case "crash":
+          var crash = new Audio("sounds/crash.mp3");
+          crash.play();
+          break;
+        case "kick":
+          var kick = new Audio("sounds/kick.mp3");
+          kick.play();
+          break;
+        case "snare":
+          var snare = new Audio("sounds/snare.mp3");
+          snare.play();
+          break;
+
+        case "tom":
+          var tom1 = new Audio("sounds/tom.mp3");
+          tom1.play();
+          break;
+      }
+    }
+
+  </script>
+</body>
+
+</html>

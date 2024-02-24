@@ -1,0 +1,72 @@
+
+.crs {
+  width: 250px; 
+  height: auto;
+  margin-left: 4%;
+  transition: transform 0.25s ease;
+  
+}
+.crs.zoomed {
+  transform: scale(1.03);  
+}
+.kck{
+     width: 200px;
+     margin-bottom: 18%;
+     margin-left: -3%;
+     transition: transform 0.25s ease;
+}
+.kck.zoomed {
+  transform: scale(1.03);  
+}
+.cs{
+   height: 0%;
+   margin-left: 2%;
+   transition: transform 0.25s ease;
+}
+.cs.zoomed {
+  transform: scale(1.03);  
+}
+.tm{
+  transition: transform 0.25s ease;
+  margin-right: -3%;
+  height: 350px;
+}
+.tm.zoomed {
+  transform: scale(1.03);  
+}
+.snr{
+  transition: transform 0.25s ease;
+  margin-left: 0%;
+}
+.snr.zoomed {
+  transform: scale(1.03);  
+}
+.bcs{
+cursor: url("./images/stick1.gif"),auto;
+background-color: rgb(113, 7, 7);
+background-image: url("../drums/images/bagis.jpg");
+background-size: cover;
+padding-top: 5%;
+
+
+}
+.drum{
+  background-color: rgba(9, 11, 11, 0.758);
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 80px;
+  box-shadow: rgba(221, 220, 240, 0.8) 0 0 9px 2px;
+  background-image: url("../drums/images/skull.jpg");
+  background-size: cover;
+  background-attachment: fixed; 
+  
+}
+.popi{
+  
+    font-family: "Splash", cursive;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(207, 207, 207);
+  letter-spacing: 9px;
+  }
+  

@@ -1,5 +1,5 @@
-import React from 'react'
-import "../Piano/Piano.css"
+import React, { useEffect } from 'react';
+import "../Piano/Piano.css";
 import Sound from "./tunes/a.wav";
 import Soundw from "./tunes/w.wav";
 import Sounds from "./tunes/s.wav";
@@ -18,98 +18,117 @@ import Soundl from "./tunes/l.wav";
 import Soundp from "./tunes/p.wav";
 import Soundm from "./tunes/m.wav";
 
-const Piano=()=> {
-  
-  function play(){
-    new Audio(Sound).play()
+const Piano = () => {
+  useEffect(() => {
+    const keyDownHandler = (event) => {
+      switch (event.key) {
+        case 'a':
+          play(Sound);
+          break;
+        case 'w':
+          play(Soundw);
+          break;
+        case 's':
+          play(Sounds);
+          break;
+        case 'e':
+          play(Sounde);
+          break;
+        case 'd':
+          play(Soundd);
+          break;
+        case 'f':
+          play(Soundf);
+          break;
+        case 't':
+          play(Soundt);
+          break;
+        case 'g':
+          play(Soundg);
+          break;
+        case 'y':
+          play(Soundy);
+          break;
+        case 'h':
+          play(Soundh);
+          break;
+        case 'u':
+          play(Soundu);
+          break;
+        case 'j':
+          play(Soundj);
+          break;
+        case 'k':
+          play(Soundk);
+          break;
+        case 'o':
+          play(Soundo);
+          break;
+        case 'l':
+          play(Soundl);
+          break;
+        case 'p':
+          play(Soundp);
+          break;
+        case ';':
+          play(Soundm);
+          break;
+        default:
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', keyDownHandler);
+
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  }, []);
+
+  function play(sound) {
+    new Audio(sound).play();
   }
-  function playw(){
-    new Audio(Soundw).play()
+
+  function playKey(sound) {
+    return () => play(sound);
   }
-  function plays(){
-    new Audio(Sounds).play()
-  }
-  function playe(){
-    new Audio(Sounde).play()
-  }
-  function playd(){
-    new Audio(Soundd).play()
-  }
-  function playf(){
-    new Audio(Soundf).play()
-  }
-  function playt(){
-    new Audio(Soundt).play()
-  }
-  function playg(){
-    new Audio(Soundg).play()
-  }
-  function playy(){
-    new Audio(Soundy).play()
-  }
-  function playh(){
-    new Audio(Soundh).play()
-  }
-  function playu(){
-    new Audio(Soundu).play()
-  }
-  function playj(){
-    new Audio(Soundj).play()
-  }
-  function playk(){
-    new Audio(Soundk).play()
-  }
-  function playo(){
-    new Audio(Soundo).play()
-  }
-  function playl(){
-    new Audio(Soundl).play()
-  }
-  function playp(){
-    new Audio(Soundp).play()
-  }
-  function playm(){
-    new Audio(Soundm).play()
-  }
-  
-    
+
   return (
-  <div className='solo'>
-    
-    <div class="wrapper">
-      <header>
-        <h2>Playable PIANO</h2></header>
-        <ul class="piano-keys">
-        <li class="key white" data-key="a"onClick={play}><span>a</span></li>
-        <li class="key black" data-key="w"onClick={playw}><span>w</span></li>
-        <li class="key white" data-key="s"onClick={plays}><span>s</span></li>
-        <li class="key black" data-key="e"onClick={playe}><span>e</span></li>
-        <li class="key white" data-key="d"onClick={playd}><span>d</span></li>
-        <li class="key white" data-key="f"onClick={playf}><span>f</span></li>
-        <li class="key black" data-key="t"onClick={playt}><span>t</span></li>
-        <li class="key white" data-key="g"onClick={playg}><span>g</span></li>
-        <li class="key black" data-key="y"onClick={playy}><span>y</span></li>
-        <li class="key white" data-key="h"onClick={playh}><span>h</span></li>
-        <li class="key black" data-key="u"onClick={playu}><span>u</span></li>
-        <li class="key white" data-key="j"onClick={playj}><span>j</span></li>
-        <li class="key white" data-key="k"onClick={playk}><span>k</span></li>
-        <li class="key black" data-key="o"onClick={playo}><span>o</span></li>
-        <li class="key white" data-key="l"onClick={playl}><span>l</span></li>
-        <li class="key black" data-key="p"onClick={playp}><span>p</span></li>
-        <li class="key white" data-key=";"onClick={playm}><span>;</span></li>
-      </ul>
-     
+  
+    <div className='ca'>
+      <center><h1 class='var'>Piano</h1></center>
+      <div className="wrapper">
+        <header>
+          <h2 className='pp'>Playable PIANO</h2>
+        </header>
+        <ul className="piano-keys">
+          <li className="key white" onClick={playKey(Sound)}><span>a</span></li>
+          <li className="key black" onClick={playKey(Soundw)}><span>w</span></li>
+          <li className="key white" onClick={playKey(Sounds)}><span>s</span></li>
+          <li className="key black" onClick={playKey(Sounde)}><span>e</span></li>
+          <li className="key white" onClick={playKey(Soundd)}><span>d</span></li>
+          <li className="key white" onClick={playKey(Soundf)}><span>f</span></li>
+          <li className="key black" onClick={playKey(Soundt)}><span>t</span></li>
+          <li className="key white" onClick={playKey(Soundg)}><span>g</span></li>
+          <li className="key black" onClick={playKey(Soundy)}><span>y</span></li>
+          <li className="key white" onClick={playKey(Soundh)}><span>h</span></li>
+          <li className="key black" onClick={playKey(Soundu)}><span>u</span></li>
+          <li className="key white" onClick={playKey(Soundj)}><span>j</span></li>
+          <li className="key white" onClick={playKey(Soundk)}><span>k</span></li>
+          <li className="key black" onClick={playKey(Soundo)}><span>o</span></li>
+          <li className="key white" onClick={playKey(Soundl)}><span>l</span></li>
+          <li className="key black" onClick={playKey(Soundp)}><span>p</span></li>
+          <li className="key white" onClick={playKey(Soundm)}><span>;</span></li>
+        </ul>
+      </div>
+      <div className='no'>Play Repeat Enjoy!!!</div>
+      <br/><br/><br/><br/><br/>
+      <center>
+        <iframe width="600" height="260" src="https://www.youtube.com/embed/bzNKQ2FkEJI?si=wybSqXWcvnPGSFC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="600" height="260" src="https://www.youtube.com/embed/S8TvXhLtLa0?si=3w4J2YB4utf_b2a7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </center>
     </div>
-    <div class='no'>Play Repeat Enjoy!!!</div><br></br><br></br><br></br><br></br><br></br><br></br>
-   <center><iframe width="700" height="260" src="https://www.youtube.com/embed/bzNKQ2FkEJI?si=wybSqXWcvnPGSFC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <iframe width="700" height="260" src="https://www.youtube.com/embed/S8TvXhLtLa0?si=3w4J2YB4utf_b2a7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
-    
-    </div>
-
-
-      
-       
-  )
+  );
 }
 
-export default Piano
+export default Piano;
