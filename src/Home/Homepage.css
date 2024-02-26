@@ -1,0 +1,73 @@
+.container{
+    width:100vw;
+    height:100vh;
+    background-image: linear-gradient(rgba(14, 12, 12, 0.71),rgba(14, 26, 32, 0.868)),url("https://images.vexels.com/content/102058/preview/colorful-music-background-1e0ecd.png");
+    background-size: cover;
+    
+}
+.row{
+    display:flex;
+    
+   height:98%;
+    align-items:center;
+}
+.col{
+    flex-basis:50%;
+
+}
+
+.head{
+    color:#fff;
+    font-size:90px;
+    margin-left:20%;
+    
+}
+ .p{
+        color:#fff;
+        font-size: 19px;
+       margin-top:5%;
+       margin-left:10%;
+    }
+    .beg{
+        width:180px;
+        color:#000;
+        font-size: 15px;
+        padding: 12px 0;
+        background: #fff;
+        border-color: antiquewhite;
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-left: 40%;
+    }
+    
+.card{
+    width: 250px;
+    height:230px;
+    display:inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor:pointer;
+    margin:10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+
+}
+.card1{
+    background-image: url("https://e0.pxfuel.com/wallpapers/603/721/desktop-wallpaper-guitar-awesome-electric-guitar.jpg");
+   
+}
+.card2{
+    background-image: url("https://www.vancopayments.com/hs-fs/hubfs/Piano.jpg?width=1600&name=Piano.jpg");
+}
+.card3{
+    background-image: url("https://img.freepik.com/premium-photo/realistic-lord-krishna-flute-with-peacock-feather_967856-14.jpg");
+}
+.card4{
+    background-image: url("https://t4.ftcdn.net/jpg/05/68/20/73/360_F_568207327_h5bCkVaFe5nWtjovuqZ5nrVwlECcllKv.jpg");
+}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow: 5px 5px 2px 2px rgb(127, 214, 227);
+}

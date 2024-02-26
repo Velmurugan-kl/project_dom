@@ -1,198 +1,3 @@
-
-// import {Link,Outlet} from 'react-router-dom'
-// import "./Navilayout.css"
-// import { useLocation, useNavigate } from 'react-router-dom';
-// import * as React from 'react';
-// import { styled, alpha } from '@mui/material/styles';
-// import InputBase from '@mui/material/InputBase';
-
-
-// const Search = styled('div')(({ theme }) => ({
-//     position: 'relative',
-//     borderRadius: theme.shape.borderRadius,
-//     backgroundColor: alpha(theme.palette.common.white, 0.15),
-//     '&:hover': {
-//       backgroundColor: alpha(theme.palette.common.white, 0.25),
-//     },
-//     marginRight: theme.spacing(2),
-//     marginLeft: 0,
-//     width: '100%',
-//     [theme.breakpoints.up('sm')]: {
-//       marginLeft: theme.spacing(3),
-//       width: 'auto',
-//     },
-//   }));
-  
-//   const SearchIconWrapper = styled('div')(({ theme }) => ({
-//     padding: theme.spacing(0, 2),
-//     height: '100%',
-//     position: 'absolute',
-//     pointerEvents: 'none',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   }));
-  
-//   const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//     color: 'inherit',
-//     '& .MuiInputBase-input': {
-//       padding: theme.spacing(1, 1, 1, 0),
-//       // vertical padding + font size from searchIcon
-//       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//       transition: theme.transitions.create('width'),
-//       width: '100%',
-//       [theme.breakpoints.up('md')]: {
-//         width: '20ch',
-//       },
-//     },
-//   }));
-
-// const Navilayout = (props) => {
-//   const nav = useNavigate();
-//   // const loc = useLocation();
-//   // const dat = loc.state;
-//   // const [loged,setLoged]=React.useState(false);
-//   // React.useEffect(() => {
-//   //     if(dat && dat.isloged){
-//   //       setLoged(dat.isLoged)
-//   //     }
-//   // }, [dat]);
-//   // console.log(dat.isLoged+">>>>>>>>>>>>>>> navi")
-//     const top100Films = [
-//         { label: 'The Shawshank Redemption', year: 1994 },
-//         { label: 'The Godfather', year: 1972 },
-//         { label: 'The Godfather: Part II', year: 1974 },
-//         { label: 'The Dark Knight', year: 2008 },
-//         { label: '12 Angry Men', year: 1957 },
-//         { label: "Schindler's List", year: 1993 },
-//         { label: 'Pulp Fiction', year: 1994 },
-//     ];
-//   return (
-//     <div>
-
-//         <ul>
-//             <li><a href="/">Home</a></li>
-//             <li><a href="/pchase">Shop</a></li>
-//             {/* <li><Autocomplete
-//                     disablePortal
-//                     id="combo-box-demo"
-//                     options={top100Films}
-//                     sx={{ width: 300 }}
-//                     renderInput={(params) => <TextField {...params} label="Movie" />}
-//                 /></li>
-            // <li><Search>
-            //     <SearchIconWrapper>
-            //     <SearchIcon />
-            //     </SearchIconWrapper>
-            //     <StyledInputBase
-            //     placeholder="Search…"
-            //     inputProps={{ 'aria-label': 'search' }}
-            //     />
-            // </Search></li> */}
-//             xclass="active" href="/signup">Signup</a></li>)}
-            
-//         </ul>
-
-//         <Outlet/>
-//     </div>
-//   )
-// }
-
-// export default Navilayout
-
-
-// import * as React from 'react';
-// import { styled, alpha } from '@mui/material/styles';
-// import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
-// import Toolbar from '@mui/material/Toolbar';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
-// import InputBase from '@mui/material/InputBase';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import SearchIcon from '@mui/icons-material/Search';
-// import { Outlet } from 'react-router-dom';
-
-// const Search = styled('div')(({ theme }) => ({
-//   position: 'relative',
-//   borderRadius: theme.shape.borderRadius,
-//   backgroundColor: alpha(theme.palette.common.white, 0.15),
-//   '&:hover': {
-//     backgroundColor: alpha(theme.palette.common.white, 0.25),
-//   },
-//   marginLeft: 0,
-//   width: '100%',
-//   [theme.breakpoints.up('sm')]: {
-//     marginLeft: theme.spacing(1),
-//     width: 'auto',
-//   },
-// }));
-
-// const SearchIconWrapper = styled('div')(({ theme }) => ({
-//   padding: theme.spacing(0, 2),
-//   height: '100%',
-//   position: 'absolute',
-//   pointerEvents: 'none',
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-// }));
-
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//   color: 'inherit',
-//   width: '100%',
-//   '& .MuiInputBase-input': {
-//     padding: theme.spacing(1, 1, 1, 0),
-//     // vertical padding + font size from searchIcon
-//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//     transition: theme.transitions.create('width'),
-//     [theme.breakpoints.up('sm')]: {
-//       width: '12ch',
-//       '&:focus': {
-//         width: '20ch',
-//       },
-//     },
-//   },
-// }));
-
-// export default function Navilayout() {
-//   return (
-//     <Box sx={{ flexGrow: 1 }}>
-//       <AppBar position="static">
-//         <Toolbar>
-//           <IconButton
-//             size="large"
-//             edge="start"
-//             color="inherit"
-//             aria-label="open drawer"
-//             sx={{ mr: 2 }}
-//           >
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography
-//             variant="h6"
-//             noWrap
-//             component="div"
-//             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-//           >
-//             MUI
-//           </Typography>
-//           <Search>
-//             <SearchIconWrapper>
-//               <SearchIcon />
-//             </SearchIconWrapper>
-//             <StyledInputBase
-//               placeholder="Search…"
-//               inputProps={{ 'aria-label': 'search' }}
-//             />
-//           </Search>
-//         </Toolbar>
-//       </AppBar>
-//       <Outlet/>
-//     </Box>
-//   );
-// }
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -204,16 +9,203 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
 
-const pages = ['Products', 'About'];
+
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { useState } from 'react';
+import FormDialog from './Logdialog';
+
+const pages = ['Products', 'About', 'Instruments'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-function Navilayout() {
+const Navilayout = () => {
+
+
+  // const FormDialog = () => {
+  //   const [open, setOpen] = React.useState(false);
+  
+  //   const handleClickOpen = () => {
+  //     setOpen(true);
+  //   };
+  
+  //   const handleClose = () => {
+  //     setOpen(false);
+  //   };
+  //   const [email,setEmail]=useState("");
+  //   const [password,setPassword]=useState("");
+  //   const [loged,setLoged]=useState(false);
+  //   const [next,setNext]=useState(false);
+  //   const handlemail = (event) =>{
+  //     setEmail (event.target.value )
+  // }
+  // const handlepass = (event) => {
+  //     setPassword(event.target.value)
+  // }
+  //   return (
+  //     <React.Fragment>
+  //       <Dialog
+  //         open={open}
+  //         onClose={handleClose}
+  //         PaperProps={{
+  //           component: 'form',
+  //           onSubmit: (event) => {
+  //             event.preventDefault();
+  //             const formData = new FormData(event.currentTarget);
+  //             const formJson = Object.fromEntries(formData.entries());
+  //             const email = formJson.email;
+  //             console.log(email);
+  //             handleClose();
+  //           },
+  //         }}
+  //       >
+  //         <DialogTitle>Subscribe</DialogTitle>
+  //         <DialogContent>
+  //           <DialogContentText>
+  //             To subscribe to this website, please enter your email address here. We
+  //             will send updates occasionally.
+  //           </DialogContentText>
+  //           <Grid container spacing={2}>
+  //               <Grid item xs={12}>
+  //                  <TextField
+  //                   required
+  //                   fullWidth
+  //                   id="email"
+  //                   label="Email Address"
+  //                   name="email"
+  //                   autoComplete="email"
+  //                   variant='filled'
+  //                   value={email}
+  //                   onChange={handlemail}
+  //                   inputProps={{ style: {color:'#e2ded7'} }}
+  //                   InputLabelProps={{style: {color:'#e2ded7'}}}
+  //                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
+  //                   />
+  //               </Grid>
+  //               <Grid item xs={12}>
+  //               <TextField
+  //                   required
+  //                   fullWidth
+  //                   name="password"
+  //                   label="Password"
+  //                   type="password"
+  //                   id="password"
+  //                   autoComplete="new-password"
+  //                   variant='filled'
+  //                   value={password}
+  //                   onChange={handlepass}
+  //                   inputProps={{ style: {color:'#e2ded7'} }}
+  //                   InputLabelProps={{style: {color:'#e2ded7'}}}
+  //                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
+  //                 />
+  //               </Grid>
+  //               <Grid item xs={12}>
+  //                 <FormControlLabel
+  //                   sx={{color:'#e2ded7'}}
+  //                   control={<Checkbox value="remember" color="primary" />}
+  //                   label="Remember me"
+  //                   />
+  //               </Grid>
+  //               <Grid item xs={12}>
+  //                 <Button
+  //                   type="submit"
+  //                   fullWidth
+  //                   variant="contained"
+  //                   // sx={{ backgroundColor:'#bbb6ae', color:'#4b4b4b'}}
+  //                   sx={{
+  //                     backgroundColor: '#bbb6ae',
+  //                     color: '#4b4b4b',
+  //                     '&:hover': {
+  //                       backgroundColor: '#8d8d8d', 
+  //                       color: '#fff', 
+  //                     },
+  //                   }}
+  //                   >
+                      
+  //                   Sign In
+  //                 </Button>
+  //               </Grid>
+  //               <Grid item xs={12}>
+  //                 <Grid container >
+  //                   <Grid item xs >
+  //                     <Link href="#" variant="body2" sx={{color:'#e4e4e4'}}>
+  //                      Forgot password?
+  //                     </Link>
+  //                   </Grid>
+  //                   <Grid item>
+  //                     <Link href="/signup1" variant="body2"sx={{color:'#e4e4e4'}}>
+  //                        {"Don't have an account? Sign Up"}
+  //                     </Link>
+  //                   </Grid>
+  //                 </Grid>
+  //               </Grid>
+  
+  //               </Grid>
+  //         </DialogContent>
+  //         <DialogActions>
+  //           <Button onClick={handleClose}>Cancel</Button>
+  //           <Button type="submit">Subscribe</Button>
+  //         </DialogActions>
+  //       </Dialog>
+  //       </React.Fragment>
+  //   );
+  // }
+  
+  // React.useEffect(() => {
+  //   <Dialog
+  //        open={true}
+  //       // onClose={handleClose}
+  //       PaperProps={{
+  //         component: 'form',
+  //         onSubmit: (event) => {
+  //           event.preventDefault();
+  //           const formData = new FormData(event.currentTarget);
+  //           const formJson = Object.fromEntries(formData.entries());
+  //           const email = formJson.email;
+  //           console.log(email);
+  //           // handleClose();
+  //         },
+  //       }}
+  //     >
+  //       <DialogTitle>Subscribe</DialogTitle>
+  //       <DialogContent>
+  //         <DialogContentText>
+  //           To subscribe to this website, please enter your email address here. We
+  //           will send updates occasionally.
+  //         </DialogContentText>
+  //         <TextField
+  //           autoFocus
+  //           required
+  //           margin="dense"
+  //           id="name"
+  //           name="email"
+  //           label="Email Address"
+  //           type="email"
+  //           fullWidth
+  //           variant="standard"
+  //         />
+  //       </DialogContent>
+  //       <DialogActions>
+  //         <Button >Cancel</Button>
+  //         <Button type="submit">Subscribe</Button>
+  //       </DialogActions>
+  //     </Dialog>
+  // }, [])
+  
+
+  
   const nav=useNavigate();
   const {loged,setLoged}=React.useContext(Mycontext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -235,7 +227,7 @@ function Navilayout() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{background:'linear-gradient(rgba(14, 12, 12, 0.71),rgba(14, 26, 32, 0.868));'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -292,6 +284,7 @@ function Navilayout() {
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+
               ))}
             </Menu>
           </Box>
@@ -356,7 +349,7 @@ function Navilayout() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={setting === "Logout" ? ()=>{setLoged(false)} : handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

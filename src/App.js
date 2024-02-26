@@ -14,6 +14,14 @@ import Profile from './profile/Profile';
 import ResponsiveGrid from './Pages/Home';
 import Mycontext from './Pages/Mycontext';
 import { useState } from 'react';
+import Drums from './drums/Drums';
+import Footer from './Pages/Footer';
+import Homepage from './Home/Homepage';
+import Gittut from './Home/Gittut';
+import Video from './Home/Video';
+import Tut from './Home/Tut';
+import FormDialog from './Pages/Logdialog';
+import WrappedComp from './Home/WrappedComp';
 
 function App() {
   const [email,setEmail]=useState("");
@@ -21,15 +29,22 @@ function App() {
   const [loged,setLoged]=useState(false);
   const [next,setNext]=useState(false);
   return (
+    <div>
+      
     <Mycontext.Provider value={{email,setEmail,password,setPassword,loged,setLoged,next,setNext}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navilayout />} >
-        <Route index element={<ResponsiveGrid />}/>
+        <Route index element={<WrappedComp/>}/>
+        <Route path='/home' element={<ResponsiveGrid />}/>
         <Route path='/piano' element={<Piano/>}/>
         <Route path='/pchase' element={<Pchase/>}/>
         <Route path='/cfront' element={<Frontpage/>}/>
         <Route path='/carnatic' element={<Carnatic/>}/>
+        <Route path='/drums' element={<Drums/>}/>
+        <Route path='/guitar' element={<Gittut/>}/>
+        <Route path='/guitar/video' element={<Video/>}/>
+        <Route path='/guitar/tutorial' element={<Tut/>}/>
         </Route>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -38,6 +53,8 @@ function App() {
       </Routes>
     </BrowserRouter>
     </Mycontext.Provider>
+    <Footer/>
+    </div>
   );
 }
 

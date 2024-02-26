@@ -1,0 +1,87 @@
+.chord{
+  background-color:white;
+  
+}
+.Chord1{
+  color:bisque;
+}
+.image-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    margin-left:50px;
+  margin-top:10px;
+  border-radius: 2%;
+  background-color: rgb(93, 195, 239);
+  background-size:cover;
+    
+  }
+  
+  .button1 {
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    background-color: #de9173da;
+    border: none;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 50px;
+    
+    height:15%;
+    width:16%;
+
+    
+    
+  }
+  
+  .button2{
+    position: absolute;
+    top: 30%;
+    height:15%;
+    width:16%;
+    right:68%;
+    background-color: #de73acda;
+    border: none;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 50px;
+  }
+  .button3{
+    
+      position: absolute;
+      top: 60%;
+      right:50%;
+      background-color: #77de73da;
+      border: none;
+      color: black;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 50px;
+      height:15%;
+    width:16%;
+    }
+    .button4{
+      position: absolute;
+      top: 28%;
+      height:15%;
+     width:16%;
+      right:38%;
+      background-color: #d2de73da;
+      border: none;
+      color: black;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 50px;
+      
+    }
+  
+  .head{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  text-align: center;
+  }
+  
+  
+  
