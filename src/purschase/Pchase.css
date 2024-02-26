@@ -1,41 +1,60 @@
+.c{
+    float: right;
+    margin-top: -1%;
+    
+}
 
-
-.h2{
+.pt{
     margin-top: 0%;
     color:rgb(255, 240, 240);
-    background-color: rgba(210, 140, 28, 0.539);
+    background-color: rgba(83, 87, 190, 0.539);
     font-family: cooper;
-    height: 45px;
+    height: 35px;
     font-size: xx-large;
 }
-.purch{
-    background-image: url("../purschase/trolly.jpg");
+.pas{
+    background-image: url("../purschase/trolly.jpeg");
     height: auto;
     width: auto;
     background-size: 100% 100%;
+    padding: 15px;
     
+}
+.mm{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 400%;
+    margin-top: -10%;
+    margin-left: 27%;
+    color: #28a745;
+}
+.mp{
+    font-family: helvetica;
+    font-size: 24px;
+    animation: pulse 1.7s infinite alternate;
+    font-size: 400%;
+    margin-top: -10%;
+    margin-left: 21%;
+    color: #007bff;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
-}
-.h1{
-    font-family: Impact, fantasy;
-    font-size: 350%;
-    margin-top: 2%;
-    margin-left: 4%;
-    color:rgb(255, 240, 240);
-}
-.h3{font-family:fantasy;
-    font-size: 500%;
-    margin-top: -1%;
-    margin-left: 12%;
-    color: rgba(66, 58, 36, 0.231);
-}
-.h5{
-  background-color: rgba(234, 228, 234, 0.566);  
-  margin-right: 690px;
-  color: rgb(18, 26, 23);
-  margin-top: 4%;
+.sc{
+  background-color: #9ec0e2;  
+  margin-right: 120px;
+  color: rgba(9, 11, 10, 0.737);
+  margin-top: -4%;
   font-size: 200%;
-  margin-left: 1%;
+  margin-left: 0%;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 40px;
   
@@ -47,52 +66,264 @@ a{
     margin-left: -13%;
     margin-bottom: -10%;
     color: rgb(4, 40, 24);
+    
+
+    
+} 
+.c{
+    float: right;
+    margin-top: -3%;
+    margin-right: 9%;
+    backface-visibility: hidden;
 }
-.si{
-    margin-bottom: 6%;
+img{
+    margin-bottom: 2.9%;
     margin-left: 2%;
-    margin-top: 2%;
 }
-.par{
-    margin-left: 10%;
+p{
+    margin-left: 12%;
     font-size: 130%;
     margin-top: 10%;
     font-size: 165%;
     
 }
 .bio{
-    margin-top: -16%;
+    margin-top: -15%;
 }
-h6{
-    margin-top: 4%;
-    margin-bottom: -4%;
+.bio1{
+    margin-top: -15%;
+}
+.bb{
+    margin-top: -2%;
+    margin-left: 12%;
+    font-weight: 800;
+    font-size: 100%;
+    font-family:'Times New Roman', Times, serif
     
 }
+.bb1{
+    margin-top: -5%;
+    margin-left: 40%;
+    font-weight: 800;
+    font-size: 100%;
+    font-family:'Times New Roman', Times, serif
+}
+
+.bb2{
+    margin-top: -3%;
+    margin-left: 12%;
+    font-weight: 900;
+    font-size: 200%;
+    font-family:sans-serif
+}
 .add{
-    background-color: rgb(116, 239, 116);
+    background-color: #28a745;
     border:none;
     padding: 5px 30px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
-    margin-left: 23%;
+    margin-left: 50%;
+    margin-bottom: 5%
     
 }
 .dec{
-    background-color: rgb(244, 89, 78);
+    background-color:#dc3545;
     border:none;
     padding: 5px 30px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
     margin-left: 1%;
-    margin-top: 4%;
     
 }
-.h4{
-    font-size: 250%;
-    font-family: impact;
-    color: rgba(38, 35, 35, 0.833);
-    margin-left: 20%;
-    margin-bottom: 4%;
+.add1{
+    background-color: #28a745;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 50%;
+    
 }
+.dec1{
+    background-color:#dc3545;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 1%;
+    margin-top: -10%;
+    
+}
+
+.tp{
+    font-size: 250%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(20, 10, 10, 0.833);
+    margin-left: 14%;
+    margin-bottom: 10%;
+    
+}
+.avatar{
+    margin-left: 91.5%;
+    margin-top: 0.3%;
+}
+.for{
+    background-color:#f8f4eb;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+    z-index: 0;
+    
+    
+}
+.pc{
+    background-color: #be8d19;
+    margin-left: 77%;
+    border-radius: 20px;  
+}
+.pr{
+    background-color: #007bff;
+    margin-left: 78%;
+    margin-top: -8%;
+    position: absolute;
+    transform: translateX(-50%);
+    padding: 20px; 
+    border-radius: 8px;
+    z-index: 1;
+
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 20px;
+  border: 1px solid #ac1e1e;
+  background-color: #052e4d;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 16%;
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  
+  
+}
+.pip {
+  width: 123.1%;
+  margin-top: -11.6%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-image: linear-gradient(#052e4d, #bf75e4); /* Start and end colors */
+  background-size: 100% 200%; /* Make the gradient twice as tall as the element */
+  transition: background-position 1.2s ease; /* Adjust the duration and timing function as needed */
+}
+
+.pip:hover {
+  background-position: 0% -100%; /* Move the gradient up on hover */
+}
+
+.profile-details {
+  flex: 1;
+}
+.socc{
+  margin-top: 10%;
+  
+}
+
+.profile-name {
+  
+  
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 900%;
+  font-weight: 700;
+}
+.pn{
+  margin-left: 40%;
+  margin-top: -10%;
+  
+}
+
+.profile-instrument,
+.profile-genre,
+.profile-location {
+  margin: 5px 0;
+  color: #b42e2e;
+}
+
+.avatar1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.25s ease;
+}
+.avatar.zoomed {
+    transform: scale(1.03);  
+  }
+.profile-card {
+    display: flex;
+    padding: 30px;
+    flex-direction: column; 
+    border: 1px solid #ac1e1e;
+    background-color: #8bc4ef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: right;
+    top: 20px; 
+    right: 60px; 
+    margin-left: 20%;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-details {
+    flex: 1;
+  }
+  
+  .profile-name {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .profile-instrument,
+  .profile-genre,
+  .profile-location {
+    margin: 5px 0;
+    color: #380675;
+    font-family:forte;
+  }
+  .avatar1 {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+  }
+  .feedb1{
+    height: 50px;
+    width: 300px;
+    background-color: #dedfe038;
+    color: white;
+    border-radius: 200px;
+    text-decoration: none;
+    
+
+}
+
+  

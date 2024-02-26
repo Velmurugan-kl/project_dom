@@ -59,7 +59,7 @@ padding-top: 5%;
   background-image: url("../drums/images/skull.jpg");
   background-size: cover;
   background-attachment: fixed; 
-  
+  background-position: 57%;  
 }
 .popi{
   
@@ -67,6 +67,12 @@ padding-top: 5%;
     font-weight: 500;
     font-style: normal;
     color: rgb(207, 207, 207);
+    background-color: rgba(7, 7, 7, 0.858);
   letter-spacing: 9px;
+  border-radius: 20px;
+  margin-left: 25%;
+  margin-right: 25%;
+  box-shadow: rgb(128, 15, 15) 0 0 9px 2px;
+  
   }
   

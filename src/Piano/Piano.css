@@ -8,6 +8,10 @@
 }
 .var{
   margin-top: 2%;
+  font-family:"Lucida Handwriting", cursive;
+  font-size: 350%;
+  color: #f3f1f1;
+  
 }
 .no{
  
@@ -68,7 +72,6 @@
 .pp{
   font-size: 2.3rem;
   color: rgb(66, 55, 55);
-  background-color: #faf4f400;
   border-radius: 0%;
   margin-left: 31%;
   font-family: Garamond, serif;;
