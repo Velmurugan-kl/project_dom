@@ -108,7 +108,7 @@ class Pchase extends Component {
               Full -Size Drumset with Cymbals (Wine Red)
                 (Single Edition)</span></p>
               <h6 className='bb' style={{ color: "#888" }}>₹̶3̶9̶,0̶0̶0̶.0̶0̶/</h6>
-              <h6 className='bb1' style={{ color: "#ffc107" }}>4.9★★★★★</h6>
+              <h6 className='bbb1' style={{ color: "#ffc107" }}>4.9★★★★★</h6>
               <h6 className='bb2' style={{ color: " #28a745" }}> ₹34999.00/</h6>
               <button className='add1' onClick={this.incrementCounter2}>Add</button>
               <button className='dec1' onClick={this.decrementCounter2}>Less</button>

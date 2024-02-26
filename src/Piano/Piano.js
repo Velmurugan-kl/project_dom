@@ -121,7 +121,7 @@ const Piano = () => {
           <li className="key white" onClick={playKey(Soundm)}><span>;</span></li>
         </ul>
       </div>
-      <div className='no'>Play Repeat Enjoy!!!</div>
+      <div className='non'>Play Repeat Enjoy!!!</div>
       <br/><br/><br/><br/><br/>
       <center>
         <iframe width="600" height="260" src="https://www.youtube.com/embed/bzNKQ2FkEJI?si=wybSqXWcvnPGSFC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

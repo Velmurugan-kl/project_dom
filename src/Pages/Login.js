@@ -13,15 +13,38 @@ import { useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import axios from 'axios';
 const Login = () => {
     const nav=useNavigate();
     const {email,setEmail,password,setPassword,loged,setLoged}=React.useContext(Mycontext)
+    var nam=[];
+    const [nous,setNous]=React.useState(true)
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        setLoged(true);
-        nav('/');
+        // for(let i=0;i<2;i++){
+          if(true){
+            setNous(false);
+            setLoged(true);
+            nav('/');
+            return;
+          }
+        // }
+        if(nous){
+          alert("Please enter a valid email address")
+        }
+        
     };
+    React.useEffect(() => {
+      axios.get('https://mocki.io/v1/29e166fd-d1fb-4a71-92e0-fa7a5ffdb53d')
+      .then(response => {
+        for(let i=0;i<2;i++){
+          nam.push(response.data[i].username)
+        }
+        console.log(nam);
+      })
+    }, []);
+
     const handlemail = (event) =>{
         setEmail (event.target.value )
     }

@@ -226,6 +226,10 @@ const Navilayout = () => {
     setAnchorElUser(null);
   };
 
+  const handle = () => {
+
+  }
+
   return (
     <AppBar position="static" sx={{background:'linear-gradient(rgba(14, 12, 12, 0.71),rgba(14, 26, 32, 0.868));'}}>
       <Container maxWidth="xl">
@@ -248,7 +252,7 @@ const Navilayout = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            POPZTUNE
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -307,7 +311,7 @@ const Navilayout = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            POPZTUNE
           </Typography>
 
           
@@ -349,7 +353,15 @@ const Navilayout = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={setting === "Logout" ? ()=>{setLoged(false)} : handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={() => {
+                  if (setting === "Logout") {
+                    setLoged(false); // Handle logic for logging out
+                  } else if (setting === "Account") {
+                    nav('/pchase'); // Navigate to account page
+                  } else {
+                    handleCloseUserMenu(); // Handle other settings or close menu
+                  }
+                }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
