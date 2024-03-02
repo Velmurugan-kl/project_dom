@@ -63,7 +63,6 @@ const Login = () => {
         const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
         const fetchedData = response.data; 
         const matchingUser = fetchedData.find(user => user.mail === email && user.password === password );
-        console.log(matchingUser,'matching --------p[-=========== ')
         if (matchingUser) {
           localStorage.setItem('id',matchingUser.id)
           localStorage.setItem('uemail',email);

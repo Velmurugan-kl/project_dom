@@ -42,10 +42,15 @@ export default function SignUp() {
   const [next,setNext]=React.useState(false);
   const {email,setEmail,password,setPassword}=React.useContext(Mycontext);
   const [vmail,setVmail]=React.useState(true);
+  const [pcap,setPcap]=React.useState(true);
+  const [psym,setPsym]=React.useState(true);
+  const [plen,setPlen]=React.useState(true);
+  const [pnum,setPnum]=React.useState(true);
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;  
-
+  const passRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{6,20}$/;
+  let errorMessage = "";
   
-  const handlePost = () => {
+  const handlePost = async () => {
     const pdata={
       mail: email,
       plan: "Free Plan",
@@ -55,26 +60,30 @@ export default function SignUp() {
       password: password,
       firstname: fname
     }
-    axios.post('https://retoolapi.dev/5M2qFh/data',pdata)
+    await axios.post('https://retoolapi.dev/5M2qFh/data',pdata)
     
   }
   
   const handleCheck = async() => {
-    const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
-    const fetchedData = response.data;
-    console.log(fetchedData,' --------p[-=========== ')
-    const matchingUser = fetchedData.find(user => user.mail === email);
-    console.log(matchingUser,'id,,,,,,,,,,,,,,,,,,,,,')
-    if(matchingUser){
-      return true;
-    }else{
-      return false
+    try {
+      const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
+      const fetchedData = response.data; 
+      const matchingUser = fetchedData.find(user => user.mail === email );
+      // console.log(matchingUser,'matching --------p[-=========== ')
+      if (matchingUser) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error("Error fetching or processing data:", error);
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
     e.preventDefault();
-    if(handleCheck()){
+    if(!handleCheck()){
       alert("user already exist");
     }
     else{
@@ -85,14 +94,36 @@ export default function SignUp() {
         alert("Check the password")
       }
       else{
-        // handlePost();
-        // nav('/login');
+        handlePost();
+        nav('/login');
       }
     }
   };
   
   const handlePass = (e) =>{
-      setPassword(e.target.value);
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    const hasSymbol = /[^\w\s]/.test(password);
+    const hasValidLength = password.length >= 6 && password.length <= 20;
+    if(passRegex.test(password)){
+      setPlen(true) ;setPcap(true);setPnum(true);setPsym(true);
+      
+    }
+    else{
+      if (!hasUppercase) {
+        setPcap(false);
+      }
+      if (!hasNumber) {
+        setPnum(false)
+      }
+      if (!hasSymbol) {
+        setPsym(false)
+      }
+      if (!hasValidLength) {
+        setPlen(false);
+      }
+    }
+    setPassword(e.target.value);
   }
   const handleCpass = (e) =>{
       setCpass(e.target.value);
@@ -116,7 +147,12 @@ export default function SignUp() {
     setPhone(e.target.value);
   }
   const handlenxt = () =>{
-    setNext(true);
+    if(fname && lname && phone){
+      setNext(true);
+    }
+    else{
+      alert("Enter all the fields")
+    }
   }
 
   return (
@@ -204,12 +240,7 @@ export default function SignUp() {
                 InputLabelProps={{style: {color:'#e2ded7'}}}
                 sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
               />
-                {/* {gender.map((option) => (
-                  <MenuItem key={option.value} value={option.value} sx={{color:'blue', backgroundColor:'rgba(228,228,228,0.2)'}}>
-                    <p style={{color:'Black'}}>{option.value}</p>
-                  </MenuItem>
-                ))}
-                </TextField> */}
+
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -244,13 +275,7 @@ export default function SignUp() {
                 Next
               </Button>
               </Grid>
-              <Grid item xs={12}>
-                  <FormControlLabel
-                    sx={{color:'#e2ded7'}}
-                    control={<Checkbox value="allowExtraEmails" color="primary" />}
-                    label="I want to receive inspiration, marketing promotions and updates via email."
-                  />
-                </Grid>
+              
             </Grid>
             
           </Box>}
@@ -268,8 +293,8 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   variant='filled'
-                  onFocus={() => {setVmail(false)}}
-                  onBlur={() => setVmail(true)}
+                  onFocus={() =>{setVmail(false)} }
+                  onBlur={() => {setVmail(true)}}
                   value={email}
                   onChange={handleMail}
                   inputProps={{ style: {color:'#e2ded7'} }}
@@ -288,12 +313,19 @@ export default function SignUp() {
                   id="Cpassword"
                   autoComplete="new-password"
                   variant='filled'
-                  value={cpass}
-                  onChange={handleCpass}
+                  onFocus={() => {setPlen(false) ;setPcap(false);setPnum(false);setPsym(false)}}
+                  onBlur={() => {setPlen(true) ;setPcap(true);setPnum(true);setPsym(true)}}
+                  value={password}
+                  onChange={handlePass}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-                />
+                  />
+                  {!pcap && (<Typography sx={{color:'#e2ded7'}}>"Missing uppercase letter. "</Typography>)}
+                  {!pnum && (<Typography sx={{color:'#e2ded7'}}>"Missing Number. "</Typography>)}
+                  {!psym && (<Typography sx={{color:'#e2ded7'}}>"Missing symbol. "</Typography>)}
+                  {!plen && (<Typography sx={{color:'#e2ded7'}}>"Password must be greater than 6 charcters"</Typography>)}
+                  
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -303,8 +335,8 @@ export default function SignUp() {
                   label="Confirm Password"
                   name="Password"
                   variant='filled'
-                  value={password}
-                  onChange={handlePass}
+                  value={cpass}
+                  onChange={handleCpass}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
