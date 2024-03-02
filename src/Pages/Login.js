@@ -9,41 +9,86 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import FilledInput from '@mui/material/FilledInput';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import LoadingOverlay from './Loaging';
+import { CircularProgress } from '@mui/material';
+import { useState } from 'react';
+
 const Login = () => {
-    const nav=useNavigate();
-    const {email,setEmail,password,setPassword,loged,setLoged}=React.useContext(Mycontext)
-    var nam=[];
-    const [nous,setNous]=React.useState(true)
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        // for(let i=0;i<2;i++){
-          if(true){
-            setNous(false);
-            setLoged(true);
-            nav('/');
-            return;
-          }
-        // }
-        if(nous){
-          alert("Please enter a valid email address")
-        }
-        
+    const nav = useNavigate();
+    const [vmail,setVmail]=useState(false)
+    const [vpass,setVpass]=useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+
+    var load=true;
+    const {email,setEmail,password,setPassword,setLoged}=React.useContext(Mycontext)
+    
+    const Loading = () => {
+      return (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: 450,
+            width:450,
+            backdropFilter:'blur(2px)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 1000, // Ensure overlay is above other content
+          }}
+        >
+          <CircularProgress size={80} sx={{color:'white'}} />
+        </Box>
+      );
     };
-    React.useEffect(() => {
-      axios.get('https://mocki.io/v1/29e166fd-d1fb-4a71-92e0-fa7a5ffdb53d')
-      .then(response => {
-        for(let i=0;i<2;i++){
-          nam.push(response.data[i].username)
+    
+    const handleSubmit = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
+        const fetchedData = response.data; 
+        const matchingUser = fetchedData.find(user => user.mail === email && user.password === password );
+        console.log(matchingUser,'matching --------p[-=========== ')
+        if (matchingUser) {
+          localStorage.setItem('id',matchingUser.id)
+          localStorage.setItem('uemail',email);
+          localStorage.setItem('upass',password);
+          localStorage.setItem('loged',true);
+          nav('/');
+        } else {
+          alert("Invalid email or password. Please try again.");
         }
-        console.log(nam);
-      })
-    }, []);
+      } catch (error) {
+        console.error("Error fetching or processing data:", error);
+      }
+      setIsLoading(false);
+    };
+    
+   
+
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+  
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
+  
 
     const handlemail = (event) =>{
         setEmail (event.target.value )
@@ -66,6 +111,8 @@ const Login = () => {
             
           }}
         >
+          
+
           <Box
           sx={{marginTop:14,
             display: 'flex',
@@ -75,11 +122,14 @@ const Login = () => {
             width:450,
             padding:5,
             backdropFilter:'blur(8px) saturate(120%)',}}>
+            {isLoading && <Loading/>}
+              
+
           <Avatar sx={{width:50,height:50}} src='./Images/skct_logo1_pn.png'/>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <Box component="form" noValidate  sx={{ mt: 1 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                  <TextField
@@ -94,11 +144,11 @@ const Login = () => {
                   onChange={handlemail}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
-                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'},}}
                   />
               </Grid>
               <Grid item xs={12}>
-              <TextField
+              {/* <TextField
                   required
                   fullWidth
                   name="password"
@@ -112,7 +162,33 @@ const Login = () => {
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-                />
+                /> */}
+                <FormControl variant="filled" sx={{ width: '100%' }}>
+                  <InputLabel htmlFor="filled-adornment-password" style={{ color: '#e2ded7' }} >
+                    Password
+                  </InputLabel>
+                  <FilledInput
+                    id="filled-adornment-password"
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={handlepass}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                          sx={{color:'#e2ded7'}}
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    inputProps={{ style: { color: '#e2ded7' } }} // Set input text color
+                  />
+                </FormControl>
+
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
@@ -123,9 +199,12 @@ const Login = () => {
               </Grid>
               <Grid item xs={12}>
                 <Button
-                  type="submit"
+                onClick={handleSubmit}
+                  type="button"
                   fullWidth
                   variant="contained"
+                  id='sub'
+                  name='sub'
                   // sx={{ backgroundColor:'#bbb6ae', color:'#4b4b4b'}}
                   sx={{
                     backgroundColor: '#bbb6ae',
@@ -156,9 +235,12 @@ const Login = () => {
               </Grid>
 
               </Grid>
+                  
             </Box>
+            
           </Box>
         </Box>
+        
       </Container>
     </ThemeProvider>
     </div>

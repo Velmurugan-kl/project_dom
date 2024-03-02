@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Login from './Pages/Login';
-// import Home from './Pages/Home';
+
 import SignUp from './Pages/Signup';
 import SignUp1 from './Pages/Signup1';
 import Navilayout from './Pages/Navilayout';
@@ -16,22 +16,21 @@ import Mycontext from './Pages/Mycontext';
 import { useState } from 'react';
 import Drums from './drums/Drums';
 import Footer from './Pages/Footer';
-import Homepage from './Home/Homepage';
 import Gittut from './Home/Gittut';
 import Video from './Home/Video';
 import Tut from './Home/Tut';
-import FormDialog from './Pages/Logdialog';
 import WrappedComp from './Home/WrappedComp';
+import Userdelete from './Pages/Userdelete';
 
 function App() {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
-  const [loged,setLoged]=useState(false);
   const [next,setNext]=useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <div>
       
-    <Mycontext.Provider value={{email,setEmail,password,setPassword,loged,setLoged,next,setNext}}>
+    <Mycontext.Provider value={{email,setEmail,password,setPassword,next,setNext,isLoading, setIsLoading}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navilayout />} >
@@ -50,10 +49,11 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signup1" element={<SignUp1 />} />
+        <Route path='/delete' element={<Userdelete/>}/>
       </Routes>
     </BrowserRouter>
     </Mycontext.Provider>
-    <Footer/>
+    {/* <Footer/> */}
     </div>
   );
 }

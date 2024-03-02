@@ -14,202 +14,19 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
+import Footer from './Footer';
 
-
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import { useState } from 'react';
-import FormDialog from './Logdialog';
 
 const pages = ['Products', 'About', 'Instruments'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Navilayout = () => {
 
-
-  // const FormDialog = () => {
-  //   const [open, setOpen] = React.useState(false);
-  
-  //   const handleClickOpen = () => {
-  //     setOpen(true);
-  //   };
-  
-  //   const handleClose = () => {
-  //     setOpen(false);
-  //   };
-  //   const [email,setEmail]=useState("");
-  //   const [password,setPassword]=useState("");
-  //   const [loged,setLoged]=useState(false);
-  //   const [next,setNext]=useState(false);
-  //   const handlemail = (event) =>{
-  //     setEmail (event.target.value )
-  // }
-  // const handlepass = (event) => {
-  //     setPassword(event.target.value)
-  // }
-  //   return (
-  //     <React.Fragment>
-  //       <Dialog
-  //         open={open}
-  //         onClose={handleClose}
-  //         PaperProps={{
-  //           component: 'form',
-  //           onSubmit: (event) => {
-  //             event.preventDefault();
-  //             const formData = new FormData(event.currentTarget);
-  //             const formJson = Object.fromEntries(formData.entries());
-  //             const email = formJson.email;
-  //             console.log(email);
-  //             handleClose();
-  //           },
-  //         }}
-  //       >
-  //         <DialogTitle>Subscribe</DialogTitle>
-  //         <DialogContent>
-  //           <DialogContentText>
-  //             To subscribe to this website, please enter your email address here. We
-  //             will send updates occasionally.
-  //           </DialogContentText>
-  //           <Grid container spacing={2}>
-  //               <Grid item xs={12}>
-  //                  <TextField
-  //                   required
-  //                   fullWidth
-  //                   id="email"
-  //                   label="Email Address"
-  //                   name="email"
-  //                   autoComplete="email"
-  //                   variant='filled'
-  //                   value={email}
-  //                   onChange={handlemail}
-  //                   inputProps={{ style: {color:'#e2ded7'} }}
-  //                   InputLabelProps={{style: {color:'#e2ded7'}}}
-  //                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-  //                   />
-  //               </Grid>
-  //               <Grid item xs={12}>
-  //               <TextField
-  //                   required
-  //                   fullWidth
-  //                   name="password"
-  //                   label="Password"
-  //                   type="password"
-  //                   id="password"
-  //                   autoComplete="new-password"
-  //                   variant='filled'
-  //                   value={password}
-  //                   onChange={handlepass}
-  //                   inputProps={{ style: {color:'#e2ded7'} }}
-  //                   InputLabelProps={{style: {color:'#e2ded7'}}}
-  //                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-  //                 />
-  //               </Grid>
-  //               <Grid item xs={12}>
-  //                 <FormControlLabel
-  //                   sx={{color:'#e2ded7'}}
-  //                   control={<Checkbox value="remember" color="primary" />}
-  //                   label="Remember me"
-  //                   />
-  //               </Grid>
-  //               <Grid item xs={12}>
-  //                 <Button
-  //                   type="submit"
-  //                   fullWidth
-  //                   variant="contained"
-  //                   // sx={{ backgroundColor:'#bbb6ae', color:'#4b4b4b'}}
-  //                   sx={{
-  //                     backgroundColor: '#bbb6ae',
-  //                     color: '#4b4b4b',
-  //                     '&:hover': {
-  //                       backgroundColor: '#8d8d8d', 
-  //                       color: '#fff', 
-  //                     },
-  //                   }}
-  //                   >
-                      
-  //                   Sign In
-  //                 </Button>
-  //               </Grid>
-  //               <Grid item xs={12}>
-  //                 <Grid container >
-  //                   <Grid item xs >
-  //                     <Link href="#" variant="body2" sx={{color:'#e4e4e4'}}>
-  //                      Forgot password?
-  //                     </Link>
-  //                   </Grid>
-  //                   <Grid item>
-  //                     <Link href="/signup1" variant="body2"sx={{color:'#e4e4e4'}}>
-  //                        {"Don't have an account? Sign Up"}
-  //                     </Link>
-  //                   </Grid>
-  //                 </Grid>
-  //               </Grid>
-  
-  //               </Grid>
-  //         </DialogContent>
-  //         <DialogActions>
-  //           <Button onClick={handleClose}>Cancel</Button>
-  //           <Button type="submit">Subscribe</Button>
-  //         </DialogActions>
-  //       </Dialog>
-  //       </React.Fragment>
-  //   );
-  // }
-  
-  // React.useEffect(() => {
-  //   <Dialog
-  //        open={true}
-  //       // onClose={handleClose}
-  //       PaperProps={{
-  //         component: 'form',
-  //         onSubmit: (event) => {
-  //           event.preventDefault();
-  //           const formData = new FormData(event.currentTarget);
-  //           const formJson = Object.fromEntries(formData.entries());
-  //           const email = formJson.email;
-  //           console.log(email);
-  //           // handleClose();
-  //         },
-  //       }}
-  //     >
-  //       <DialogTitle>Subscribe</DialogTitle>
-  //       <DialogContent>
-  //         <DialogContentText>
-  //           To subscribe to this website, please enter your email address here. We
-  //           will send updates occasionally.
-  //         </DialogContentText>
-  //         <TextField
-  //           autoFocus
-  //           required
-  //           margin="dense"
-  //           id="name"
-  //           name="email"
-  //           label="Email Address"
-  //           type="email"
-  //           fullWidth
-  //           variant="standard"
-  //         />
-  //       </DialogContent>
-  //       <DialogActions>
-  //         <Button >Cancel</Button>
-  //         <Button type="submit">Subscribe</Button>
-  //       </DialogActions>
-  //     </Dialog>
-  // }, [])
-  
-
   
   const nav=useNavigate();
-  const {loged,setLoged}=React.useContext(Mycontext)
+  const {setIsLoading}=React.useContext(Mycontext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [loged,setLoged]=React.useState(localStorage.getItem('loged'));
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -227,10 +44,11 @@ const Navilayout = () => {
   };
 
   const handle = () => {
-
+    setIsLoading(false);
   }
 
   return (
+    <div>
     <AppBar position="static" sx={{background:'linear-gradient(rgba(14, 12, 12, 0.71),rgba(14, 26, 32, 0.868));'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -355,7 +173,10 @@ const Navilayout = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={() => {
                   if (setting === "Logout") {
-                    setLoged(false); // Handle logic for logging out
+                    localStorage.setItem('loged',false)
+                    setLoged(false);
+                    setIsLoading(true);
+                    setTimeout(handle, 3000)
                   } else if (setting === "Account") {
                     nav('/pchase'); // Navigate to account page
                   } else {
@@ -372,6 +193,8 @@ const Navilayout = () => {
       </Container>
       <Outlet/>
     </AppBar>
+    <Footer/>
+    </div>
   );
 }
 export default Navilayout;

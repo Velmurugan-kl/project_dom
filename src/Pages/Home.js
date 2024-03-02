@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
+import Footer from './Footer';
 
 // const Home = () => {
 //   const logged=false;
@@ -84,9 +85,6 @@ export default function ResponsiveGrid(props) {
                   transition: 'transform 0.1s ease-in-out',
                   transform: 'scale(1.1)',
                 },
-                // transform: 'scale(1.05)', // Subtle zoom
-                // boxShadow: '10 4px 6px rgba(50, 50, 93, 0.15)', // Add shadow
-                // border: '1px solid #ddd', // Optional border change
               }}> 
             <CardMedia onClick={()=>{nav('/piano')}}
             sx={{ height: 150,maxHeight:200 }}
@@ -439,33 +437,6 @@ export default function ResponsiveGrid(props) {
             </Card>
           </Grid>   
 
-
-            {/* <Grid item xs={12} sm={12} lg={12} md={12} >
-              <Grid container justifyContent="center" alignItems="center" sx={{ backgroundColor: '#f5f5f5', padding: 4 }}>
-              <Grid item xs={6}>
-                <Typography variant="body2" color="textSecondary">
-                  © 2024 Company Name. All rights reserved.
-                </Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <IconButton color="inherit" aria-label="Facebook">
-                  <Link href="#">
-                    <FacebookIcon />
-                  </Link>
-                </IconButton>
-                <IconButton color="inherit" aria-label="Instagram">
-                  <Link href="#">
-                    <InstagramIcon />
-                  </Link>
-                </IconButton>
-                <IconButton color="inherit" aria-label="Twitter">
-                  <Link href="#">
-                    <TwitterIcon />
-                  </Link>
-                </IconButton>
-              </Grid>
-            </Grid> 
-        </Grid> */}
     </Grid>
     </Box>
   );

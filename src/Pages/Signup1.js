@@ -11,9 +11,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useLocation, useNavigate } from 'react-router-dom';
-import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
+import axios from 'axios';
 
 
 function Copyright(props) {
@@ -35,30 +35,90 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const nav=useNavigate();
-  const {email,setEmail,password,setPassword,next,setNext}=React.useContext(Mycontext);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('Password'),
-    });
-    setEmail(data.get('email'))
-    setPassword(data.get('Password'))
-    if(data.get('Password')==="" || data.get('Cpassword')===""){
-      alert("Enter the password")
+  const[cpass,setCpass]=React.useState("")
+  const [fname,setFname]=React.useState("")
+  const [lname,setLname]=React.useState("")
+  const [phone,setPhone]=React.useState("")
+  const [next,setNext]=React.useState(false);
+  const {email,setEmail,password,setPassword}=React.useContext(Mycontext);
+  const [vmail,setVmail]=React.useState(true);
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;  
+
+  
+  const handlePost = () => {
+    const pdata={
+      mail: email,
+      plan: "Free Plan",
+      phone: phone,
+      Premium: true,
+      lastname: lname,
+      password: password,
+      firstname: fname
     }
-    else if(data.get('Password')!==data.get('Cpassword') ){
-      alert("Check the password")
+    axios.post('https://retoolapi.dev/5M2qFh/data',pdata)
+    
+  }
+  
+  const handleCheck = async() => {
+    const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
+    const fetchedData = response.data;
+    console.log(fetchedData,' --------p[-=========== ')
+    const matchingUser = fetchedData.find(user => user.mail === email);
+    console.log(matchingUser,'id,,,,,,,,,,,,,,,,,,,,,')
+    if(matchingUser){
+      return true;
+    }else{
+      return false
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(handleCheck()){
+      alert("user already exist");
     }
     else{
-      setTimeout(()=>{
-
-        nav('/login');
-      },3000)
+      if(password ==="" || cpass ===""){
+        alert("Enter the password");
+      }
+      else if(password !== cpass ){
+        alert("Check the password")
+      }
+      else{
+        // handlePost();
+        // nav('/login');
+      }
     }
   };
   
+  const handlePass = (e) =>{
+      setPassword(e.target.value);
+  }
+  const handleCpass = (e) =>{
+      setCpass(e.target.value);
+  }
+  const handleMail = (e) =>{
+      setEmail(e.target.value);
+      if(emailRegex.test(email)){ 
+        setVmail(true);
+      }
+      else{
+          setVmail(false)
+      }
+  }
+  const handlefname = (e) =>{
+    setFname(e.target.value);
+  }
+  const handlelname = (e) =>{
+    setLname(e.target.value);
+  }
+  const handlephone = (e) =>{
+    setPhone(e.target.value);
+  }
+  const handlenxt = () =>{
+    setNext(true);
+  }
+
   return (
     <div className='sig'>
     <ThemeProvider theme={defaultTheme}>
@@ -87,7 +147,7 @@ export default function SignUp() {
 
 
         {/* profile */}
-          {!next && <Box component="form" noValidate onSubmit={()=>{setNext(true)}} sx={{ mt: 3 }}>
+          {!next && <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={6}>
                 <TextField
@@ -98,6 +158,8 @@ export default function SignUp() {
                   name="firstname"
                   autoFocus
                   variant='filled'
+                  value={fname}
+                  onChange={handlefname}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
@@ -110,8 +172,9 @@ export default function SignUp() {
                   id="lastname"
                   label="Last Name"
                   name="lasttname"
-                  autoFocus
                   variant='filled'
+                  value={lname}
+                  onChange={handlelname}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
@@ -155,8 +218,9 @@ export default function SignUp() {
                   id="mobilno"
                   label="Mobile"
                   name="mobilno"
-                  autoFocus
                   variant='filled'
+                  value={phone}
+                  onChange={handlephone}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
@@ -164,6 +228,7 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
               <Button
+                onClick={handlenxt}
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -192,7 +257,7 @@ export default function SignUp() {
 
           {/* signup */}
 
-          {next && <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          {next && <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
@@ -203,43 +268,53 @@ export default function SignUp() {
                   name="email"
                   autoComplete="email"
                   variant='filled'
+                  onFocus={() => {setVmail(false)}}
+                  onBlur={() => setVmail(true)}
+                  value={email}
+                  onChange={handleMail}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                   />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="Password"
-                  label="Password"
-                  name="Password"
-                  variant='filled'
-                  inputProps={{ style: {color:'#e2ded7'} }}
-                  InputLabelProps={{style: {color:'#e2ded7'}}}
-                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-                  />
+                  {!vmail && (<Typography sx={{color:'#e2ded7'}}>"Please enter a valid email address."</Typography>)}
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
                   name="Cpassword"
-                  label="Confirm Password"
+                  label="Password"
                   type="password"
                   id="Cpassword"
                   autoComplete="new-password"
                   variant='filled'
+                  value={cpass}
+                  onChange={handleCpass}
                   inputProps={{ style: {color:'#e2ded7'} }}
                   InputLabelProps={{style: {color:'#e2ded7'}}}
                   sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="Password"
+                  label="Confirm Password"
+                  name="Password"
+                  variant='filled'
+                  value={password}
+                  onChange={handlePass}
+                  inputProps={{ style: {color:'#e2ded7'} }}
+                  InputLabelProps={{style: {color:'#e2ded7'}}}
+                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
+                  />
+              </Grid>
 
             <Grid item xs={6}>
             <Button
               fullWidth
+              
               variant="contained"
               onClick={()=>{setNext(false)}}
               sx={{
@@ -257,7 +332,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={6}>
             <Button
-              type="submit"
+              onClick={handleSubmit}
               fullWidth
               variant="contained"
               sx={{

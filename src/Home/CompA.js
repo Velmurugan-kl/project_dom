@@ -2,16 +2,24 @@ import React, { useContext,useState } from 'react'
 import Context from './Context'
 import './Homepage.css'
 import { useNavigate } from 'react-router-dom'
+import LoadingOverlay from '../Pages/Loaging';
+import Mycontext from '../Pages/Mycontext';
 const CompA = () => {
   const nav=useNavigate()
     const[color,setColor]=useState('white');
+    const {isLoading} = useContext(Mycontext);
     
     const changefun = () =>{
         setColor('gold');
     }
-    const{myValue,setMyValue}=useContext(Context);
-  return (
-    <div>
+
+
+
+    const{myValue}=useContext(Context);
+    return (
+        
+      <div>
+        {isLoading && <LoadingOverlay/>}
         <div class="container">
         
         <div class="row">
@@ -51,7 +59,6 @@ const CompA = () => {
 </div>
           </div>
         </div>
-        
     
   
 
@@ -59,7 +66,7 @@ const CompA = () => {
 
         {/* <p style={{color:color}}>Value from Context:{myValue}</p>
         <button onClick={()=>setMyValue("New")}>Change</button>
-        <button onClick={changefun}>Change Value</button> */}
+      <button onClick={changefun}>Change Value</button> */}
     </div>
   )
 }

@@ -14,9 +14,10 @@
 }
 .pas{
     background-image: url("../purschase/trolly.jpeg");
-    height: auto;
-    width: auto;
-    background-size: 100% 100%;
+    background-size: cover;
+    height: 100%;
+    /*width: auto; */
+    /* background-size: 100% 100%; */
     padding: 15px;
     
 }
@@ -179,14 +180,10 @@ p{
     margin-top: 0.3%;
 }
 .for{
-  height: 650px;
     background-color:#f8f4eb;
-    margin-top: 1%;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 20px;
+    margin-top: 10%;
     margin-bottom: 10%;
-    
+    /* width: 800px; */
     z-index: 0;
     
     
