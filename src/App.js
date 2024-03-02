@@ -21,6 +21,7 @@ import Video from './Home/Video';
 import Tut from './Home/Tut';
 import WrappedComp from './Home/WrappedComp';
 import Userdelete from './Pages/Userdelete';
+import Courses from './Home/Courses';
 
 function App() {
   const [email,setEmail]=useState("");
@@ -44,6 +45,7 @@ function App() {
         <Route path='/guitar' element={<Gittut/>}/>
         <Route path='/guitar/video' element={<Video/>}/>
         <Route path='/guitar/tutorial' element={<Tut/>}/>
+        <Route path='/guitar/courses' element={<Courses/>}/>
         </Route>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>

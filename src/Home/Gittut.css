@@ -1,21 +1,28 @@
 .cont {
+  background-image: url("https://png.pngtree.com/background/20210717/original/pngtree-music-white-subject-for-pre-k-tempo-picture-image_1443111.jpg");
+  background-size:cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  
 }
 .title{
-  font-family: 'Times New Roman', Times, serif;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 40px;
+  color:gold;
+  background-color:rgba(0, 0, 0, 0.612);
+  border-radius: 20px;
 }
 .tuto {
   flex: 1;
-  height:500px;
+  /* height:500px; */
   right:10%;
   
 }
-
 .img-container {
   display: flex;
+
   align-items: center;
   justify-content: space-around;
   margin-top: 20px;
@@ -23,10 +30,10 @@
 .btn{
   position: absolute;
   top: 30%;
-  left: 12%;
+  left: 55%;
   background-color: hsla(49, 92%, 51%, 0.774);
   color: black;
-  padding: 5px;
+  padding: 7px;
   font-size: 16px;
   border-radius: 50px;
   height:10%;
@@ -35,10 +42,10 @@
 .btn1{
   position: absolute;
   top: 50%;
-  left: 12%;
+  left: 55%;
   background-color: hsla(49, 92%, 51%, 0.774);
   color: black;
-  padding: 16px;
+  padding: 12px;
   font-size: 16px;
   border-radius: 50px;
   height:10%;
@@ -47,7 +54,7 @@
 .btn2{
   position: absolute;
   top: 60%;
-  left: 12%;
+  left: 55%;
   background-color: hsla(49, 92%, 51%, 0.774);
   color: black;
   padding: 16px;
@@ -59,7 +66,7 @@
 .btn3{
   position: absolute;
   top: 70%;
-  left: 12%;
+  left: 55%;
   background-color: hsla(49, 92%, 51%, 0.774);
   color: black;
   padding: 16px;
@@ -71,7 +78,7 @@
 .btn4{
   position: absolute;
   top: 80%;
-  left: 12%;
+  left: 55%;
   background-color: hsla(49, 92%, 51%, 0.774);
   color: black;
   padding: 16px;
@@ -79,4 +86,26 @@
   border-radius: 50px;
   height:10%;
   width:5%;
+}
+.btn6{
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  background-color:black;
+  color:gold;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 40px;
+  height:8%;
+  width:10%;
+}
+
+
+@media screen and (max-width: 480px) {
+  .tuto {
+    height: auto; 
+    width: 100%; 
+  }
+
+  
 }

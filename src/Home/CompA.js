@@ -37,7 +37,7 @@ const CompA = () => {
           </div>
           
           <div class="col">
-          <div class="card card1" onClick={() => {nav('/guitar')}}>
+          <div class="card card1" onClick={() => {nav('/guitar/courses')}}>
     
           
           </div>
