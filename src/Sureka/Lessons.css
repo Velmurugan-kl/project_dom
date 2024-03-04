@@ -1,0 +1,82 @@
+.bg{
+    background-image:linear-gradient(rgba(117, 153, 233, 0.838),rgba(37, 29, 29, 0.537)),url("https://c8.alamy.com/comp/2C8GTCY/vector-illustration-of-a-seamless-abstract-musical-background-2C8GTCY.jpg");
+  background-size:cover;
+
+
+}
+.most-popular-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing:content-box;
+    padding: 2px 4px;
+    margin-bottom: 12px;
+    background-color:black;
+    border-radius: 30px;
+    
+}
+.most-popular-items:hover{
+    left:250px;
+    cursor: pointer;
+    position: relative;
+    top: -1px;
+    box-shadow: 5px 5px 1px  rgb(231, 222, 222);
+    align-items: center;
+    
+}
+.music-icon-section{
+    display: flex;
+    align-items: center;
+    
+}
+.music-icon-section p{
+    
+    padding: 2px 4px;
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+.btn7{
+    margin-bottom: 1%;
+    margin-left: 85%;
+  background-color:black;
+  color:gold;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 40px;
+  height:8%;
+  width:10%;
+    
+}
+@media screen and (max-width: 768px) {
+    .most-popular-items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .most-popular-items:hover {
+        left: 0;
+    }
+    
+    .music-icon-section p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .most-popular-items {
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 20px;
+    }
+    
+    .music-icon-section p {
+        font-size: 12px;
+    }
+}
+
+
+
+
+

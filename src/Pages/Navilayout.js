@@ -15,7 +15,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Mycontext from './Mycontext';
 import Footer from './Footer';
-
+import { useEffect } from 'react';
+import FormDialog from './Logindiag';
 
 const pages = ['Products', 'About', 'Instruments'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -26,7 +27,7 @@ const Navilayout = () => {
   const {setIsLoading}=React.useContext(Mycontext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [loged,setLoged]=React.useState(localStorage.getItem('loged'));
+  const [showFormDialog, setShowFormDialog] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -46,6 +47,21 @@ const Navilayout = () => {
   const handle = () => {
     setIsLoading(false);
   }
+
+  const handlelog = () =>{
+    console.log("local log",localStorage.getItem('loged'))
+    return(
+      <FormDialog/>
+    )
+  }
+
+  useEffect(() => {
+    if(!JSON.parse(localStorage.getItem('loged'))){
+      setTimeout(() => {
+        setShowFormDialog(true);
+      }, 3000);
+    }
+  }, [JSON.parse(localStorage.getItem('loged'))]);
 
   return (
     <div>
@@ -144,11 +160,11 @@ const Navilayout = () => {
             ))}
           </Box>
 
-              {!loged && (<Box display={'flex'} >
+              {!JSON.parse(localStorage.getItem('loged')) && (<Box display={'flex'} >
                   <Button variant="text" sx={{ my: 2, color: 'white', display: 'block' }} onClick={() => {nav('/login')}}>Login</Button>
               </Box>)}
 
-          {loged && (<Box sx={{ flexGrow: 0 }}>
+          {JSON.parse(localStorage.getItem('loged')) && (<Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="./Images/avat.png" />
@@ -174,7 +190,6 @@ const Navilayout = () => {
                 <MenuItem key={setting} onClick={() => {
                   if (setting === "Logout") {
                     localStorage.setItem('loged',false)
-                    setLoged(false);
                     setIsLoading(true);
                     setTimeout(handle, 3000)
                   } else if (setting === "Account") {
@@ -191,8 +206,9 @@ const Navilayout = () => {
 
         </Toolbar>
       </Container>
-      <Outlet/>
     </AppBar>
+      <Outlet/>
+    {showFormDialog && <FormDialog onClose={() => setShowFormDialog(false)} />}
     <Footer/>
     </div>
   );

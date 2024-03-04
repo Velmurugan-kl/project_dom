@@ -1,0 +1,386 @@
+.c{
+    float: right;
+    margin-top: -1%; 
+}
+.avaa1:hover{
+    transform: scale(1.2); 
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+.card11 {
+  transition: 0.3s;
+  margin-left: 10%;
+  margin-right: 58%;
+  background-color: #e30d0d44;
+  border-radius: 10px; 
+  margin-top: 4%;
+}
+.card11:hover {
+  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.2);
+}
+.container11 {
+  padding: 2px 16px;
+}
+.card12 {
+  transition: 0.3s;
+  margin-left: 58%;
+  margin-right: 10%;
+  margin-top: -55%;
+  background-color: #7060cf68;
+  border-radius: 10px;
+  
+}
+.card12:hover {
+  box-shadow: 0 8px 16px 8px rgba(0,0,0,0.2);
+}
+.container12 {
+  padding: 2px 16px;
+}
+
+.pt{
+    margin-top: 0%;
+    color:rgb(255, 240, 240);
+    background-color: rgba(83, 87, 190, 0.539);
+    font-family: cooper;
+    height: 35px;
+    font-size: xx-large;
+}
+.pas{
+    background-image: url("../purschase/trolly.jpeg");
+    height: auto;
+    width: auto;
+    background-size: 100% 100%;
+    padding: 15px;
+    
+}
+.mm{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 400%;
+    margin-top: -12%;
+    margin-left: 27%;
+    color: #6f54bb;
+}
+.mp{
+    font-family: helvetica;
+    font-size: 24px;
+    animation: pulse 1.2s infinite alternate;
+    font-size: 400%;
+    margin-top: -12%;
+    margin-left: 17%;
+    color: #c78323;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.sc{
+  background-color: #9ec0e2;  
+  margin-right: 120px;
+  color: rgba(9, 11, 10, 0.737);
+  margin-top: -1%;
+  font-size: 200%;
+  margin-left: -6%;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 40px;
+  
+}
+ 
+.c{
+    float: right;
+    margin-top: -3%;
+    margin-right: 9%;
+    backface-visibility: hidden;
+}
+.imag{
+    margin-bottom: 2.9%;
+    margin-left: 0%;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    
+}
+
+.bio{
+    margin-top: -1%;
+    margin-left: 12%;
+    font-size: 130%;
+    margin-top: 8%;
+    font-size: 165%;
+}
+.bio1{
+    margin-top: -1%;
+    margin-left: 12%;
+    font-size: 130%;
+    margin-top: 8%;
+    font-size: 165%;
+}
+.bbb{
+    margin-top: 10%;
+    margin-left: 12%;
+    font-weight: 800;
+    font-size: 170%;
+    font-family:'Times New Roman', Times, serif
+    
+}
+.bbb1{
+    margin-top: -23%;
+    margin-left: 12%;
+    font-weight: 800;
+    font-size: 120%;
+    font-family:'Times New Roman', Times, serif
+}
+
+.bbb2{
+    margin-top: 20%;
+    margin-left: 24%;
+    font-weight: 900;
+    font-size: 200%;
+    font-family:sans-serif
+}
+.add{
+    background-color: #28a745;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 37%;
+    margin-bottom: 5%
+}
+.add:hover {
+      background-color: #21b243; 
+      transform: scale(1.3); 
+    }
+    
+
+.dec{
+    background-color:#dc3545;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 37%;
+    margin-bottom: 5%;
+    transition: transform 0.3s;
+    
+}
+.dec:hover {
+  background-color: #d62e3f; 
+  transform: scale(1.2); 
+}
+.add1{
+    background-color: #21b243;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 37%;   
+}
+.add1:hover {
+  background-color: #388e3c; 
+  transform: scale(1.3); 
+}
+
+.dec1{
+    background-color:#dc3545;
+    border:none;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 37%;
+    margin-top: -10%;   
+}
+.dec1:hover {
+  background-color: #d62e3f; 
+  transform: scale(1.2); 
+}
+
+.tp{
+    font-size: 250%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(46, 16, 16, 0.833);
+    margin-left: 31%;
+    margin-top: 4%;
+    font-weight: 800;
+    
+    
+}
+.avatari{
+    margin-left: 94%;
+    margin-top: -2%;
+}
+.avatari:hover {
+ 
+  
+  transform: scale(1.1); 
+  cursor: pointer; 
+  transition: transform 0.3s ease;
+}
+
+.por{
+    background-color:#f8f4eb;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+    padding: 60px;
+    z-index: 0;
+    
+    
+}
+.pc{
+    background-color: #be8d19;
+    margin-left: 77%;
+    border-radius: 20px;  
+}
+.pr{
+    background-color: #007bff;
+    margin-left: 78%;
+    margin-top: -8%;
+    position: absolute;
+    transform: translateX(-50%);
+    padding: 20px; 
+    border-radius: 8px;
+    z-index: 1;
+
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 20px;
+  border: 1px solid #ac1e1e;
+  background-color: #052e4d;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 16%;
+  left: 50%; 
+  transform: translateX(-50%); 
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  
+  
+}
+.pip {
+  width: 123.1%;
+  margin-top: -11.6%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-image: linear-gradient(#052e4d, #bf75e4); /* Start and end colors */
+  background-size: 100% 200%; /* Make the gradient twice as tall as the element */
+  transition: background-position 1.2s ease; /* Adjust the duration and timing function as needed */
+}
+
+.pip:hover {
+  background-position: 0% -100%; /* Move the gradient up on hover */
+}
+
+.profile-details {
+  flex: 1;
+}
+.socc{
+  margin-top: 10%;
+  
+}
+
+.profile-name {
+  
+  
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 900%;
+  font-weight: 700;
+}
+.pn{
+  margin-left: 40%;
+  margin-top: -10%;
+  
+}
+
+.profile-instrument,
+.profile-genre,
+.profile-location {
+  margin: 5px 0;
+  color: #b42e2e;
+}
+
+.avatar1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.25s ease;
+}
+.avatar.zoomed {
+    transform: scale(1.03);  
+  }
+.profile-card {
+    display: flex;
+    padding: 30px;
+    flex-direction: column; 
+    border: 1px solid #ac1e1e;
+    background-color: #8bc4ef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: right;
+    top: 20px; 
+    right: 60px; 
+    margin-left: 20%;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-details {
+    flex: 1;
+  }
+  
+  .profile-name {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .profile-instrument,
+  .profile-genre,
+  .profile-location {
+    margin: 5px 0;
+    color: #380675;
+    font-family:forte;
+  }
+  .avatar1 {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+  }
+  .feedb1{
+    height: 50px;
+    width: 300px;
+    background-color: #dedfe038;
+    color: white;
+    border-radius: 200px;
+    text-decoration: none;
+    
+
+}
+
+  

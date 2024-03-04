@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 const Courses = () => {
   const navigate=useNavigate()
   const handleclick = () => {
-navigate("/guitar")
+navigate("/guitar/tutorial")
   }
    return (
     <>

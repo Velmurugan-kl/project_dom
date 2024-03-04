@@ -1,23 +1,37 @@
 import React,{useState} from 'react'
-import Sounda from "./Music/A.mp3"
-import Soundb from "./Music/B.mp3"
-import Soundc from "./Music/C_64kb.mp3";
-import Sounde from "./Music/E_64kb.mp3";
+import Sounda from "./Tut/A.mp3"
+import Soundb from "./Tut/B.mp3";
+import Soundc from "./Tut/C_64kb.mp3";
+import Sounde from "./Tut/E_64kb.mp3";
 
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import './Tut.css'
-const Tut = () => {
-  const [timeoutId, setTimeoutId] = useState(null);
+import Rating from '@mui/material/Rating';
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+  
+  
+  const Tut = () => {
+  const [value, setValue] = React.useState(5);
 
-
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
     function playa(){
         new Audio(Sounda).play()
-        if (timeoutId) {
-          clearTimeout(timeoutId); // Clear previous timeout
-        }
-        setTimeoutId(setTimeout(() => {
-          alert('Free trial over!');
-        }, 10000)); // Set new timeout
       
       }
       function playb(){
@@ -29,11 +43,30 @@ const Tut = () => {
       function playd(){
         new Audio(Sounde).play()
       }
+    
       
   return (
+  
+    <>
+       <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <center>
+        <Typography component="legend"> Successfullly Completed Basic-I Tutorial!!! </Typography>
+        <br></br>
+        <Rating name="read-only" value={value} readOnly size="large" />
+        </center>
+        
+
+        </Box>
+      </Modal>
     
     <div class="chord">
-  <center><h1 >Chords Tutorial</h1></center>
+  <center><h1 style={{color:"white"}}>Chords Tutorial</h1></center>
     <div class="image-container">
       
        <h1 class="Chord1">A MAJOR CHORD</h1>
@@ -91,9 +124,10 @@ const Tut = () => {
         <button class="button3" onClick={playb}>2</button>
         
         </div>
+        <Button class="btn7" onClick={handleOpen}>Continue</Button>
         </div>
     
-  
+  </>
   )
 }
 

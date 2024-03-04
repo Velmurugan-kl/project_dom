@@ -1,18 +1,19 @@
 .chord{
-  background-color:white;
-  
+  background-image:linear-gradient(rgba(117, 153, 233, 0.838),rgba(37, 29, 29, 0.537)),url("https://c8.alamy.com/comp/2C8GTCY/vector-illustration-of-a-seamless-abstract-musical-background-2C8GTCY.jpg");
+  background-size:cover;
+
 }
 .Chord1{
-  color:bisque;
+  color:whitesmoke;
 }
 .image-container {
     position: relative;
     display: inline-block;
-    padding: 10px;
+    padding: 5px;
     margin-left:50px;
   margin-top:10px;
   border-radius: 2%;
-  background-color: rgb(93, 195, 239);
+  background-color: rgba(14, 14, 14, 0.927);
   background-size:cover;
     
   }
@@ -27,12 +28,8 @@
     padding: 16px;
     font-size: 16px;
     border-radius: 50px;
-    
     height:15%;
-    width:16%;
-
-    
-    
+    width:16%; 
   }
   
   .button2{
@@ -49,7 +46,6 @@
     border-radius: 50px;
   }
   .button3{
-    
       position: absolute;
       top: 60%;
       right:50%;
@@ -60,13 +56,13 @@
       font-size: 16px;
       border-radius: 50px;
       height:15%;
-    width:16%;
-    }
-    .button4{
+      width:16%;
+}
+.button4{
       position: absolute;
       top: 28%;
       height:15%;
-     width:16%;
+      width:16%;
       right:38%;
       background-color: #d2de73da;
       border: none;
@@ -76,12 +72,28 @@
       border-radius: 50px;
       
     }
+  @media screen and (max-width: 768px) {
+    .image-container {
+      margin-left: 2%;
+    }
   
-  .head{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-  text-align: center;
+    .button {
+      font-size: 12px;
+    }
   }
   
+  @media screen and (max-width: 576px) {
+    .image-container {
+      margin-left: 0;
+    }
   
+    .button {
+      font-size: 10px;
+    }
+  }
   
+  @media screen and (max-width: 480px) {
+    .button {
+      padding: 10px;
+    }
+  }

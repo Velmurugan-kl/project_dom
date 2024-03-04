@@ -1,22 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Gittut.css';
-import Sounda from "./Music/A.mp3"
-import Soundb from "./Music/B.mp3"
-import Soundc from "./Music/C_64kb.mp3";
-import Sounde from "./Music/E_64kb.mp3";
-import Soundd from "./Music/D.mp3";
-
-
-
 import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom'
+import Sounda from "./Tut/A.mp3"
+import Soundb from "./Tut/B.mp3";
+import Soundc from "./Tut/C_64kb.mp3";
+import Soundd from './Tut/D.mp3';
+import Sounde from "./Tut/E_64kb.mp3";
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
-
-
+import { colors } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -39,7 +36,7 @@ const Gittut = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const page = useNavigate();
+
 
   function playa(){
     new Audio(Sounda).play()
@@ -97,8 +94,6 @@ const Gittut = () => {
             src="https://appliedguitartheory.com/wp-content/uploads/2024/01/chord-diagram-explanation.png"
             alt="chords" width="500" height="500"
           />
-
-
           <button class="btn" onClick={playa}>A</button>
           <button class="btn1" onClick={playb}>D</button>
           <button class="btn2" onClick={playc}>G</button>
