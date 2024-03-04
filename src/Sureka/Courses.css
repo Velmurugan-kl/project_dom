@@ -34,3 +34,14 @@
       width: 100%; /* Full width on even smaller screens */
     }
   }
+
+  .next{
+
+  background-color: hsla(49, 92%, 51%, 0.774);
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 50px;
+  height:10%;
+  width:20%;
+  }

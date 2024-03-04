@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import './Tut.css'
 import Rating from '@mui/material/Rating';
+import { useNavigate } from 'react-router-dom';
   const style = {
     position: 'absolute',
     top: '50%',
@@ -43,7 +44,10 @@ import Rating from '@mui/material/Rating';
       function playd(){
         new Audio(Sounde).play()
       }
-    
+      const navigate=useNavigate()
+      const handleclick = () => {
+        navigate("/guitar")
+      } 
       
   return (
   
@@ -60,7 +64,7 @@ import Rating from '@mui/material/Rating';
         <br></br>
         <Rating name="read-only" value={value} readOnly size="large" />
         </center>
-        
+        <button style={{ marginLeft: "170px", backgroundColor:"goldenrod" ,borderRadius:"70px",height:"40px",width:"70px"}} onClick={handleclick}>Finish</button>
 
         </Box>
       </Modal>

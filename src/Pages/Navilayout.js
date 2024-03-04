@@ -18,6 +18,7 @@ import Footer from './Footer';
 import { useEffect } from 'react';
 import FormDialog from './Logindiag';
 
+
 const pages = ['Products', 'About', 'Instruments'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Navilayout = () => {
@@ -167,7 +168,7 @@ const Navilayout = () => {
           {JSON.parse(localStorage.getItem('loged')) && (<Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="./Images/avat.png" />
+              <Avatar sx={{ bgcolor: 'smokeywhite' }}>{localStorage.getItem('name')[0]}</Avatar>
               </IconButton>
             </Tooltip>
             <Menu

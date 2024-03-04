@@ -45,7 +45,7 @@ const BasicChords = () => {
         <br></br>
         <Rating name="read-only" value={value} readOnly size="large" />
         </center>
-        <button style={{ marginLeft: "120px", backgroundColor:"goldenrod" }} onClick={handleclick}>Next</button>
+        <button style={{ marginLeft: "170px", backgroundColor:"goldenrod" ,borderRadius:"70px",height:"40px",width:"70px"}} onClick={handleclick}>Next</button>
 
         </Box>
       </Modal>

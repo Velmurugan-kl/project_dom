@@ -1,10 +1,20 @@
 import React from 'react';
 import './Courses.css'; 
 import {useNavigate} from 'react-router-dom'
+import { useState } from 'react';
 const Courses = () => {
   const navigate=useNavigate()
   const handleclick = () => {
 navigate("/guitar/tutorial")
+  }
+  const [basic1Unlocked, setBasic1Unlocked] = useState(false);
+  
+  const handleUnlockBasic2 = () => {
+    if (!basic1Unlocked) {
+      alert("Please unlock Basic-I first to access Basic-II.");
+    } else {
+      
+    }
   }
    return (
     <>
@@ -18,7 +28,7 @@ navigate("/guitar/tutorial")
       <div className="course-item">
       <h1 style={{color:"white"}}>Basics-II</h1>
         <img src="https://fydn.imgix.net/m%2Fgen%2Fart-print-square-p1%2F9a5308b6-4b44-4404-ab12-66af6f3a9602.jpg?auto=format%2Ccompress&q=75" alt="Course 2" height="400px" width="500px" />
-        <button class="unlock1">Unlock</button>
+        <button className="unlock1" onClick={handleUnlockBasic2}>Unlock</button>
       </div>
       <div className="course-item">
       <h1 style={{color:"white"}}>Basics-III</h1>

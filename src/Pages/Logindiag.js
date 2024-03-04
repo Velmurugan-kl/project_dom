@@ -14,26 +14,43 @@ import Grid from '@mui/material/Grid';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 export default function FormDialog() {
   const [open, setOpen] = React.useState(true);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-  const handleClose = () => {
-    setOpen(false);
+  const nav=useNavigate();
+  const handleClose = async () => {
+    try {
+      const response = await axios.get('https://retoolapi.dev/5M2qFh/data');
+      const fetchedData = response.data; 
+      const matchingUser = fetchedData.find(user => user.mail === email && user.password === password );
+      if (matchingUser) {
+        localStorage.setItem('id',matchingUser.id);
+        localStorage.setItem('name',matchingUser.firstname);
+        localStorage.setItem('uemail',email);
+        localStorage.setItem('upass',password);
+        localStorage.setItem('loged',true);
+        setOpen(false);
+        nav('/');
+      } else {
+        alert("Invalid email or password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error fetching or processing data:", error);
+    }
   };
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const [loged,setLoged]=useState(false);
   const [next,setNext]=useState(false);
+  
   const handlemail = (event) =>{
     setEmail (event.target.value )
 }
 const handlepass = (event) => {
     setPassword(event.target.value)
 }
+
   return (
     <React.Fragment>
       <Dialog
@@ -100,6 +117,7 @@ const handlepass = (event) => {
               </Grid>
               <Grid item xs={12}>
                 <Button
+                // onClick={handleSubmit}
                   type="submit"
                   fullWidth
                   variant="contained"

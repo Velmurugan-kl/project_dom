@@ -25,7 +25,7 @@
   transition: 0.3s;
   margin-left: 58%;
   margin-right: 10%;
-  margin-top: -55%;
+  margin-top: -66%;
   background-color: #7060cf68;
   border-radius: 10px;
   
@@ -46,7 +46,7 @@
     font-size: xx-large;
 }
 .pas{
-    background-image: url("../purschase/trolly.jpeg");
+    background-image: url("./trolly.jpeg.jpg");
     height: auto;
     width: auto;
     background-size: 100% 100%;
@@ -56,8 +56,8 @@
 .mm{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 400%;
-    margin-top: -12%;
-    margin-left: 27%;
+    margin-top: -10%;
+    margin-left: 22%;
     color: #6f54bb;
 }
 .mp{
@@ -65,7 +65,7 @@
     font-size: 24px;
     animation: pulse 1.2s infinite alternate;
     font-size: 400%;
-    margin-top: -12%;
+    margin-top: -10%;
     margin-left: 17%;
     color: #c78323;
 }
@@ -87,7 +87,7 @@
   color: rgba(9, 11, 10, 0.737);
   margin-top: -1%;
   font-size: 200%;
-  margin-left: -6%;
+  margin-left: -5%;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 40px;
   
@@ -130,7 +130,7 @@
     
 }
 .bbb1{
-    margin-top: -23%;
+    margin-top: -17%;
     margin-left: 12%;
     font-weight: 800;
     font-size: 120%;

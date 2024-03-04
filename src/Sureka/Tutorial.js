@@ -43,8 +43,7 @@ import Rating from '@mui/material/Rating';
         <br></br>
         <Rating name="read-only" value={value} readOnly size="large" />
         </center>
-        <button style={{ marginLeft: "120px", backgroundColor:"goldenrod" }} onClick={handleclick}>Next</button>
-
+        <button style={{ marginLeft: "170px", backgroundColor:"goldenrod" ,borderRadius:"70px",height:"40px",width:"70px"}} onClick={handleclick}>Next</button>
         </Box>
       </Modal>
     <div style={{  background: 'radial-gradient(circle, rgba(60,107,144,1) 0%, rgba(140,133,133,1) 100%)', fontFamily: "serif", padding: "20px",margin:"30px 30px",border:"5px solid black"}}>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "./Pchase.css";
-import img30 from "../purschase/piabook.png";
-import img31 from "../purschase/drumbook.png";
-import ava from "../purschase/pro.png";
-import ava1 from "../purschase/close.png";
-import gs from "../purschase/boi.jpg";
-import soc from "../purschase/social.png";
+import img30 from "./piabook.jpg";
+import img31 from "./drumbook.png";
+import ava from "./pro.png";
+import ava1 from "./close.png";
+import gs from "./boi.jpg";
+import soc from "./social.png";
 
 
 class Pchase extends Component {
@@ -96,7 +96,7 @@ class Pchase extends Component {
                 <div className='pip'><br></br>
                   <img src={gs} width={100} height={100} alt="Profile"className="profile-image"/>
                   <div className='pn'>
-                    <p className="profile-name">Surya</p>
+                    <p className="profile-name">Surya{localStorage.getItem('name')}</p>
                   </div>
                   <br></br>
                 </div>
@@ -114,7 +114,7 @@ class Pchase extends Component {
               </div>
             }
             <div class="card11">
-              <img src={img30} width={316.9} height={170} alt="book" className="imag"/>
+              <img src={img30} width={390} height={250} alt="book" className="imag"/>
               <div class="container11">
                 <p className='bio'>
                   <span style={{ color: "black" }}>Trinity College London Piano Exam Pieces Plus Exercises <br />
@@ -131,11 +131,11 @@ class Pchase extends Component {
             </div>
             <div class="card12">
               <div className='ig'></div>
-              <img src={img31} width={316.9} height={170} alt="book" className="imag"/>
+              <img src={img31} width={390} height={250} alt="book" className="imag"/>
               <div class="container12">
                 <p className='bio1'>
                   <span style={{ color: "black" }}>Kadence Acoustic Beginners Drum Kit (5 Piece Complete) <br/>
-                  Full -Size Drumset with Cymbals (Wine Red)
+                  Full -Size Drumset with Cymbals 
                   </span></p>
                 <h6 className='bbb' style={{ color: "red" }}>₹̶3̶9̶,0̶0̶0̶.0̶0̶/</h6>
                 <h6 className='bbb1' style={{ color: "#ffa534" }}>4.9★★★★★</h6>
