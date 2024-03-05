@@ -65,6 +65,7 @@ const Login = () => {
         const matchingUser = fetchedData.find(user => user.mail === email && user.password === password );
         if (matchingUser) {
           localStorage.setItem('id',matchingUser.id)
+          localStorage.setItem('name',matchingUser.firstname);
           localStorage.setItem('uemail',email);
           localStorage.setItem('upass',password);
           localStorage.setItem('loged',true);
@@ -98,6 +99,7 @@ const Login = () => {
 
     const defaultTheme = createTheme();
   return (
+    <div class="contai">
     <div className='sig'>
         <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -147,21 +149,7 @@ const Login = () => {
                   />
               </Grid>
               <Grid item xs={12}>
-              {/* <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  variant='filled'
-                  value={password}
-                  onChange={handlepass}
-                  inputProps={{ style: {color:'#e2ded7'} }}
-                  InputLabelProps={{style: {color:'#e2ded7'}}}
-                  sx={{'& .MuiInputLabel-root':{color:'#e2ded7'}}}
-                /> */}
+
                 <FormControl variant="filled" sx={{ width: '100%' }}>
                   <InputLabel htmlFor="filled-adornment-password" style={{ color: '#e2ded7' }} >
                     Password
@@ -242,6 +230,7 @@ const Login = () => {
         
       </Container>
     </ThemeProvider>
+    </div>
     </div>
   )
 }

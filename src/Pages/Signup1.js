@@ -156,6 +156,7 @@ export default function SignUp() {
   }
 
   return (
+    <div class="contai">
     <div className='sig'>
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -396,6 +397,7 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </div>
     </div>
   );
 }

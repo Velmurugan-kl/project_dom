@@ -1,6 +1,6 @@
 .container{
     width:100vw;
-    height:100vh;
+    /* height:100vh; */
     background-image: linear-gradient(rgba(14, 12, 12, 0.71),rgba(14, 26, 32, 0.868)),url("https://images.vexels.com/content/102058/preview/colorful-music-background-1e0ecd.png");
     background-size: cover;
     
@@ -11,10 +11,10 @@
    height:98%;
     align-items:center;
 }
-.col{
+/* .col{
     flex-basis:50%;
 
-}
+} */
 
 .head{
     color:#fff;

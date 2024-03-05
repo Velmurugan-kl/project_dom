@@ -17,6 +17,7 @@ import Mycontext from './Mycontext';
 import Footer from './Footer';
 import { useEffect } from 'react';
 import FormDialog from './Logindiag';
+import LoadingOverlay from './Loaging';
 
 
 const pages = ['Products', 'About', 'Instruments'];
@@ -25,7 +26,7 @@ const Navilayout = () => {
 
   
   const nav=useNavigate();
-  const {setIsLoading}=React.useContext(Mycontext)
+  const {isLoading,setIsLoading}=React.useContext(Mycontext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [showFormDialog, setShowFormDialog] = React.useState(false);
@@ -47,13 +48,7 @@ const Navilayout = () => {
 
   const handle = () => {
     setIsLoading(false);
-  }
-
-  const handlelog = () =>{
-    console.log("local log",localStorage.getItem('loged'))
-    return(
-      <FormDialog/>
-    )
+    nav('/');
   }
 
   useEffect(() => {
@@ -209,6 +204,7 @@ const Navilayout = () => {
       </Container>
     </AppBar>
       <Outlet/>
+      {isLoading && <LoadingOverlay/>}
     {showFormDialog && <FormDialog onClose={() => setShowFormDialog(false)} />}
     <Footer/>
     </div>
