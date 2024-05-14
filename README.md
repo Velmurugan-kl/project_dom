@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## NOTE:
+  check for the working of API - https://retoolapi.dev/5M2qFh/data
+
 ## Available Scripts
 
 In the project directory, you can run:
